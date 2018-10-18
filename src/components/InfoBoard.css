@@ -1,0 +1,31 @@
+.container {
+  width: 320px;
+  height: 150px;
+  border-radius: 5px;
+  background-color: rgb(41, 41, 41);
+  margin: 20px auto;
+  color: white;
+}
+
+.card-column {
+  display: inline-block;
+  margin: auto;
+  padding: 5px;
+  list-style: none;
+}
+
+.card-column li {
+  margin: 5px;
+}
+
+.winning {
+color:gold;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
