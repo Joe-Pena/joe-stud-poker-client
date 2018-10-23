@@ -11,7 +11,7 @@ export function chipCounter(props) {
 }
 
 const mapStateToProps = (state) => ({
-  chips: state.chips,
+  chips: state.cards.chips,
 })
 
 export default connect(mapStateToProps)(chipCounter);

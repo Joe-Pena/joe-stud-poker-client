@@ -1,17 +1,35 @@
 import React from 'react';
 import {reduxForm, Field} from 'redux-form';
 import './LoginPage.css';
-import { SignUpPage } from './SignUpPage';
+import {Link} from 'react-router-dom';
+import {required, nonEmpty} from '../validators';
 
 export function LoginPage() {
   return (
     <div>
       <form className="loginForm">
-      <Field className="formField" name="username" id="username" placeholder="username" component="input" />
-      <Field className="formField" name="password" id="password" placeholder="password" component="input" />
-      <button className="button">Login</button>
+      <h1>Login</h1>
+      <Field 
+        className="formField" 
+        type="text" 
+        name="username" 
+        id="username" 
+        placeholder="username" 
+        component="input" 
+        validate={[required, nonEmpty]}
+        />
+      <Field 
+        className="formField" 
+        type="password" 
+        name="password" 
+        id="password" 
+        placeholder="password" 
+        component="input" 
+        validate={[required, nonEmpty]}
+        />
+      <Link to='/signup'>sign up</Link>
+      <button type="submit" className="button">Login</button>
       </form>
-      <button onClick={() => <SignUpPage />}>sign up</button>
     </div>
   )
 }

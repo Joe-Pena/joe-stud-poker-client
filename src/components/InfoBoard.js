@@ -15,7 +15,7 @@ export function infoBoard(props) {
       <ul className='card-column right'>
         <li>Flush: <span className='winning'>{props.stake * 4}</span></li>
         <li>Straight: <span className='winning'>{props.stake * 3}</span></li>
-        <li>Three of a kind: <span className='winning'>{props.stake * 1}</span></li>
+        <li>Three of a kind: <span className='winning'>{props.stake * 2}</span></li>
         <li>Two Pair: <span className='winning'>{props.stake * 1}</span></li>
         <li>Pair: <span className='winning'>{props.stake * 0.5}</span></li>
       </ul>

@@ -5,14 +5,15 @@ import DealerTable from './DealerTable';
 import Hand from './Hand';
 import ChipCounter from './ChipCounter';
 import DealButton from './DealButton';
-import LoginPage from './LoginPage';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
 import StakeButton from './StakeButton';
+import WelcomePage from './WelcomePage';
 
 export function PokerTable(props) {
     if(!props.loggedIn) {
       return (
-        <LoginPage />
+        <WelcomePage />
       )
     }
 
@@ -21,9 +22,11 @@ export function PokerTable(props) {
       <InfoBoard />
       <DealerTable />
       <Hand />
-      <ChipCounter />
-      <DealButton />
-      <StakeButton />
+      <div className="infoBoxes">
+        <ChipCounter />
+        <DealButton />
+        <StakeButton />
+      </div>
     </div>
     )
 }
@@ -32,4 +35,4 @@ const mapStateToProps = (state) => ({
   loggedIn: state.cards.loggedIn,
 })
 
-export default connect(mapStateToProps)(PokerTable);
+export default withRouter(connect(mapStateToProps)(PokerTable));
