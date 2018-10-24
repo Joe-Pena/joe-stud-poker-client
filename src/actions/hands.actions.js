@@ -147,7 +147,7 @@ export function jwtToken(token) {
 };
 
 export const logIn = (values) => dispatch => {
-  return fetch('/api/login', {
+  return fetch('https://stud-poker-server.herokuapp.com/api/auth/login', {
     method: 'POST',
     body: JSON.stringify(values),
     headers: {
@@ -161,6 +161,25 @@ export const logIn = (values) => dispatch => {
   }).then(data => {
     dispatch(jwtToken(data.jwtToken));
   }).catch(err => {
-    
+    return Promise.reject(err)
+  })
+}
+
+export const signUp = (values) => dispatch => {
+  return fetch('https://stud-poker-server.herokuapp.com/api/users', {
+    method: 'POST',
+    body: JSON.stringify(values),
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  }).then(res => {
+    if(!res.ok) {
+      return Promise.reject(res)
+    }
+    return res.json()
+  }).then(data => {
+    return data.createdUser
+  }).catch(err => {
+    return Promise.reject(err)
   })
 }

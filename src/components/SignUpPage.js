@@ -3,6 +3,7 @@ import {reduxForm, Field} from 'redux-form';
 import {Link} from 'react-router-dom';
 import './LoginPage.css';
 import {required, nonEmpty, email} from '../validators';
+import { signUp } from '../actions/hands.actions';
 
 
 export class SignUpPage extends React.Component {
@@ -61,4 +62,5 @@ export class SignUpPage extends React.Component {
 
 export default reduxForm({
   form: 'SignUp',
+  onSubmit: (values, dispatch) => { return dispatch(signUp(values))}
 })(SignUpPage);
