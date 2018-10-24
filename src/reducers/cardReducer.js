@@ -1,5 +1,5 @@
 const initialState = {
-  loggedIn: true,
+  jwtToken: null,
   error: null,
   currentHand: [],
   cardsToHold: [false, false, false, false, false], //TODO RID OF ACTIONS AND CARDSTOHOLD

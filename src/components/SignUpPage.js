@@ -8,7 +8,7 @@ import {required, nonEmpty, email} from '../validators';
 export class SignUpPage extends React.Component {
 
   onSubmit(values) {
-    return fetch('/api/messages', {
+    return fetch('/api/users', {
       method: 'POST',
       body: JSON.stringify(values),
       headers: {

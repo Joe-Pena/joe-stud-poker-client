@@ -2,12 +2,13 @@ import React from 'react';
 import {reduxForm, Field} from 'redux-form';
 import './LoginPage.css';
 import {Link} from 'react-router-dom';
+import {logIn} from '../actions/hands.actions';
 import {required, nonEmpty} from '../validators';
 
-export function LoginPage() {
+export function LoginPage(props) {
   return (
     <div>
-      <form className="loginForm">
+      <form className="loginForm" onSubmit={props.handleSubmit}>
       <h1>Login</h1>
       <Field 
         className="formField" 
@@ -35,5 +36,6 @@ export function LoginPage() {
 }
 
 export default reduxForm({
-  form: 'Login'
+  form: 'Login',
+  onSubmit: (values, dispatch) => { return dispatch(logIn(values))}
 })(LoginPage);

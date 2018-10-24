@@ -32,7 +32,7 @@ export function PokerTable(props) {
 }
 
 const mapStateToProps = (state) => ({
-  loggedIn: state.cards.loggedIn,
+  loggedIn: !!state.cards.jwtToken,
 })
 
 export default withRouter(connect(mapStateToProps)(PokerTable));

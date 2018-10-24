@@ -4,7 +4,7 @@ import { changeStake } from '../actions/hands.actions';
 import './BottomButton.css';
 
 export function StakeButton(props) {
-  if(props.inPlay) {
+  if(props.inPlay || props.standby) {
     return (
       <div>
         <input className="button" type="number" step="5" onChange={(e) => props.dispatch(changeStake(e.target.value))} placeholder="Stake" disabled></input>
@@ -22,6 +22,7 @@ export function StakeButton(props) {
 const mapStateToProps = (state) => ({
   stakeAmount: state.cards.stake,
   inPlay: state.cards.inPlay,
+  standby: state.cards.standby,
 })
 
 export default connect(mapStateToProps)(StakeButton);

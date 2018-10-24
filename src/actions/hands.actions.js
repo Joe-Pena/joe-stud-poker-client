@@ -137,3 +137,30 @@ export function newHand(hand) {
   hand
   })
 };
+
+export const JWT_TOKEN = 'JWT_TOKEN';
+export function jwtToken(token) {
+  return({
+  type: JWT_TOKEN,
+  token
+  })
+};
+
+export const logIn = (values) => dispatch => {
+  return fetch('/api/login', {
+    method: 'POST',
+    body: JSON.stringify(values),
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  }).then(res => {
+    if(!res.ok) {
+      return Promise.reject(res)
+    }
+    return res.json()
+  }).then(data => {
+    dispatch(jwtToken(data.jwtToken));
+  }).catch(err => {
+    
+  })
+}
