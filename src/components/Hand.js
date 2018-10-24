@@ -61,229 +61,228 @@ export function Hand(props) {
   // let handImages = [];
 
   if(props.firstHand) {
-    const firstHand = props.hand.map(card => {
+    const firstHand = props.hand.map((card, index) => {
       if (card.suit === 'S' && card.rank === 'A') {
-        return (<img className="card" alt="Ace Of Spades" src={aceOfSpades} />)
+        return (<img className="card" alt="Ace Of Spades" src={aceOfSpades} key={index}/>)
       } else if (card.suit === 'S' && card.rank === '2') {
-        return (<img className="card" alt="Two Of Spades" src={twoOfSpades} />)      
+        return (<img className="card" alt="Two Of Spades" src={twoOfSpades} key={index} />)      
       } else if (card.suit === 'S' && card.rank === '3') {
-        return (<img className="card" alt="Three Of Spades" src={threeOfSpades} />)
+        return (<img className="card" alt="Three Of Spades" src={threeOfSpades} key={index} />)
       } else if (card.suit === 'S' && card.rank === '4') {
-        return (<img className="card" alt="Four Of Spades" src={fourOfSpades} />)
+        return (<img className="card" alt="Four Of Spades" src={fourOfSpades} key={index} />)
       } else if (card.suit === 'S' && card.rank === '5') {
-        return (<img className="card" alt="Five Of Spades" src={fiveOfSpades} />)
+        return (<img className="card" alt="Five Of Spades" src={fiveOfSpades} key={index} />)
       } else if (card.suit === 'S' && card.rank === '6') {
-        return (<img className="card" alt="Six Of Spades" src={sixOfSpades} />)
+        return (<img className="card" alt="Six Of Spades" src={sixOfSpades} key={index} />)
       } else if (card.suit === 'S' && card.rank === '7') {
-        return (<img className="card" alt="Seven Of Spades" src={sevenOfSpades} />)
+        return (<img className="card" alt="Seven Of Spades" src={sevenOfSpades} key={index} />)
       } else if (card.suit === 'S' && card.rank === '8') {
-        return (<img className="card" alt="Eight Of Spades" src={eightOfSpades} />)
+        return (<img className="card" alt="Eight Of Spades" src={eightOfSpades} key={index} />)
       } else if (card.suit === 'S' && card.rank === '9') {
-        return (<img className="card" alt="Nine Of Spades" src={nineOfSpades} />)
+        return (<img className="card" alt="Nine Of Spades" src={nineOfSpades} key={index} />)
       } else if (card.suit === 'S' && card.rank === '10') {
-        return (<img className="card" alt="Ten Of Spades" src={tenOfSpades} />)
+        return (<img className="card" alt="Ten Of Spades" src={tenOfSpades} key={index} />)
       } else if (card.suit === 'S' && card.rank === 'J') {
-        return (<img className="card" alt="Jack Of Spades" src={jackOfSpades} />)
+        return (<img className="card" alt="Jack Of Spades" src={jackOfSpades} key={index} />)
       } else if (card.suit === 'S' && card.rank === 'Q') {
-        return (<img className="card" alt="Queen Of Spades" src={queenOfSpades} />)
+        return (<img className="card" alt="Queen Of Spades" src={queenOfSpades} key={index} />)
       } else if (card.suit === 'S' && card.rank === 'K') {
-        return (<img className="card" alt="King Of Spades" src={kingOfSpades} />)
+        return (<img className="card" alt="King Of Spades" src={kingOfSpades} key={index} />)
       } else if (card.suit === 'H' && card.rank === 'A') {
-        return (<img className="card" alt="Ace Of Hearts" src={aceOfHearts} />)
+        return (<img className="card" alt="Ace Of Hearts" src={aceOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === '2') {
-        return (<img className="card" alt="Two Of Hearts" src={twoOfHearts} />)
+        return (<img className="card" alt="Two Of Hearts" src={twoOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === '3') {
-        return (<img className="card" alt="Three Of Hearts" src={threeOfHearts} />)
+        return (<img className="card" alt="Three Of Hearts" src={threeOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === '4') {
-        return (<img className="card" alt="Four Of Hearts" src={fourOfHearts} />)
+        return (<img className="card" alt="Four Of Hearts" src={fourOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === '5') {
-        return (<img className="card" alt="Five Of Hearts" src={fiveOfHearts} />)
+        return (<img className="card" alt="Five Of Hearts" src={fiveOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === '6') {
-        return (<img className="card" alt="Six Of Hearts" src={sixOfHearts} />)
+        return (<img className="card" alt="Six Of Hearts" src={sixOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === '7') {
-        return (<img className="card" alt="Seven Of Hearts" src={sevenOfHearts} />)
+        return (<img className="card" alt="Seven Of Hearts" src={sevenOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === '8') {
-        return (<img className="card" alt="Eight Of Hearts" src={eightOfHearts} />)
+        return (<img className="card" alt="Eight Of Hearts" src={eightOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === '9') {
-        return (<img className="card" alt="Nine Of Hearts" src={nineOfHearts} />)
+        return (<img className="card" alt="Nine Of Hearts" src={nineOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === '10') {
-        return (<img className="card" alt="Ten Of Hearts" src={tenOfHearts} />)
+        return (<img className="card" alt="Ten Of Hearts" src={tenOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === 'J') {
-        return (<img className="card" alt="Jack Of Hearts" src={jackOfHearts} />)
+        return (<img className="card" alt="Jack Of Hearts" src={jackOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === 'Q') {
-        return (<img className="card" alt="Queen Of Hearts" src={queenOfHearts} />)
+        return (<img className="card" alt="Queen Of Hearts" src={queenOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === 'K') {
-        return (<img className="card" alt="King Of Hearts" src={kingOfHearts} />)
+        return (<img className="card" alt="King Of Hearts" src={kingOfHearts} key={index} />)
       } else if (card.suit === 'D' && card.rank === 'A') {
-        return (<img className="card" alt="Ace Of Diamonds" src={aceOfDiamonds} />)
+        return (<img className="card" alt="Ace Of Diamonds" src={aceOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === '2') {
-        return (<img className="card" alt="Two Of Diamonds" src={twoOfDiamonds} />)
+        return (<img className="card" alt="Two Of Diamonds" src={twoOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === '3') {
-        return (<img className="card" alt="Three Of Diamonds" src={threeOfDiamonds} />)
+        return (<img className="card" alt="Three Of Diamonds" src={threeOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === '4') {
-        return (<img className="card" alt="Four Of Diamonds" src={fourOfDiamonds} />)
+        return (<img className="card" alt="Four Of Diamonds" src={fourOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === '5') {
-        return (<img className="card" alt="Five Of Diamonds" src={fiveOfDiamonds} />)
+        return (<img className="card" alt="Five Of Diamonds" src={fiveOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === '6') {
-        return (<img className="card" alt="Six Of Diamonds" src={sixOfDiamonds} />)
+        return (<img className="card" alt="Six Of Diamonds" src={sixOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === '7') {
-        return (<img className="card" alt="Seven Of Diamonds" src={sevenOfDiamonds} />)
+        return (<img className="card" alt="Seven Of Diamonds" src={sevenOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === '8') {
-        return (<img className="card" alt="Eight Of Diamonds" src={eightOfDiamonds} />)
+        return (<img className="card" alt="Eight Of Diamonds" src={eightOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === '9') {
-        return (<img className="card" alt="Nine Of Diamonds" src={nineOfDiamonds} />)
+        return (<img className="card" alt="Nine Of Diamonds" src={nineOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === '10') {
-        return (<img className="card" alt="Ten Of Diamonds" src={tenOfDiamonds} />)
+        return (<img className="card" alt="Ten Of Diamonds" src={tenOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === 'J') {
-        return (<img className="card" alt="Jack Of Diamonds" src={jackOfDiamonds} />)
+        return (<img className="card" alt="Jack Of Diamonds" src={jackOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === 'Q') {
-        return (<img className="card" alt="Queen Of Diamonds" src={queenOfDiamonds} />)
+        return (<img className="card" alt="Queen Of Diamonds" src={queenOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === 'K') {
-        return (<img className="card" alt="King Of Diamonds" src={kingOfDiamonds} />)
+        return (<img className="card" alt="King Of Diamonds" src={kingOfDiamonds} key={index} />)
       } else if (card.suit === 'C' && card.rank === 'A') {
-        return (<img className="card" alt="Ace Of Clubs" src={aceOfClubs} />)
+        return (<img className="card" alt="Ace Of Clubs" src={aceOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === '2') {
-        return (<img className="card" alt="Two Of Clubs" src={twoOfClubs} />)
+        return (<img className="card" alt="Two Of Clubs" src={twoOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === '3') {
-        return (<img className="card" alt="Three Of Clubs" src={threeOfClubs} />)
+        return (<img className="card" alt="Three Of Clubs" src={threeOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === '4') {
-        return (<img className="card" alt="Four Of Clubs" src={fourOfClubs} />)
+        return (<img className="card" alt="Four Of Clubs" src={fourOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === '5') {
-        return (<img className="card" alt="Five Of Clubs" src={fiveOfClubs} />)
+        return (<img className="card" alt="Five Of Clubs" src={fiveOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === '6') {
-        return (<img className="card" alt="Six Of Clubs" src={sixOfClubs} />)
+        return (<img className="card" alt="Six Of Clubs" src={sixOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === '7') {
-        return (<img className="card" alt="Seven Of Clubs" src={sevenOfClubs} />)
+        return (<img className="card" alt="Seven Of Clubs" src={sevenOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === '8') {
-        return (<img className="card" alt="Eight Of Clubs" src={eightOfClubs} />)
+        return (<img className="card" alt="Eight Of Clubs" src={eightOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === '9') {
-        return (<img className="card" alt="Nine Of Clubs" src={nineOfClubs} />)
+        return (<img className="card" alt="Nine Of Clubs" src={nineOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === '10') {
-        return (<img className="card" alt="Ten Of Clubs" src={tenOfClubs} />)
+        return (<img className="card" alt="Ten Of Clubs" src={tenOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === 'J') {
-        return (<img className="card" alt="Jack Of Clubs" src={jackOfClubs} />)
+        return (<img className="card" alt="Jack Of Clubs" src={jackOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === 'Q') {
-        return (<img className="card" alt="Queen Of Clubs" src={queenOfClubs} />)
+        return (<img className="card" alt="Queen Of Clubs" src={queenOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === 'K') {
-        return (<img className="card" alt="King Of Clubs" src={kingOfClubs} />)
+        return (<img className="card" alt="King Of Clubs" src={kingOfClubs} key={index} />)
       };
       return card;
     })
     return (
-      <div className="cardContainer">
+      <div className="cardContainer" >
         {firstHand}
       </div>
     )
   } else if(props.secondHand) {
-    const secondHand = props.hand.map(card => {
+    const secondHand = props.hand.map((card, index) => {
       if (card.suit === 'S' && card.rank === 'A') {
-        return (<img className="card" alt="Ace Of Spades" src={aceOfSpades} />)
+        return (<img className="card" alt="Ace Of Spades" src={aceOfSpades} key={index}/>)
       } else if (card.suit === 'S' && card.rank === '2') {
-        return (<img className="card" alt="Two Of Spades" src={twoOfSpades} />)      
+        return (<img className="card" alt="Two Of Spades" src={twoOfSpades} key={index} />)      
       } else if (card.suit === 'S' && card.rank === '3') {
-        return (<img className="card" alt="Three Of Spades" src={threeOfSpades} />)
+        return (<img className="card" alt="Three Of Spades" src={threeOfSpades} key={index} />)
       } else if (card.suit === 'S' && card.rank === '4') {
-        return (<img className="card" alt="Four Of Spades" src={fourOfSpades} />)
+        return (<img className="card" alt="Four Of Spades" src={fourOfSpades} key={index} />)
       } else if (card.suit === 'S' && card.rank === '5') {
-        return (<img className="card" alt="Five Of Spades" src={fiveOfSpades} />)
+        return (<img className="card" alt="Five Of Spades" src={fiveOfSpades} key={index} />)
       } else if (card.suit === 'S' && card.rank === '6') {
-        return (<img className="card" alt="Six Of Spades" src={sixOfSpades} />)
+        return (<img className="card" alt="Six Of Spades" src={sixOfSpades} key={index} />)
       } else if (card.suit === 'S' && card.rank === '7') {
-        return (<img className="card" alt="Seven Of Spades" src={sevenOfSpades} />)
+        return (<img className="card" alt="Seven Of Spades" src={sevenOfSpades} key={index} />)
       } else if (card.suit === 'S' && card.rank === '8') {
-        return (<img className="card" alt="Eight Of Spades" src={eightOfSpades} />)
+        return (<img className="card" alt="Eight Of Spades" src={eightOfSpades} key={index} />)
       } else if (card.suit === 'S' && card.rank === '9') {
-        return (<img className="card" alt="Nine Of Spades" src={nineOfSpades} />)
+        return (<img className="card" alt="Nine Of Spades" src={nineOfSpades} key={index} />)
       } else if (card.suit === 'S' && card.rank === '10') {
-        return (<img className="card" alt="Ten Of Spades" src={tenOfSpades} />)
+        return (<img className="card" alt="Ten Of Spades" src={tenOfSpades} key={index} />)
       } else if (card.suit === 'S' && card.rank === 'J') {
-        return (<img className="card" alt="Jack Of Spades" src={jackOfSpades} />)
+        return (<img className="card" alt="Jack Of Spades" src={jackOfSpades} key={index} />)
       } else if (card.suit === 'S' && card.rank === 'Q') {
-        return (<img className="card" alt="Queen Of Spades" src={queenOfSpades} />)
+        return (<img className="card" alt="Queen Of Spades" src={queenOfSpades} key={index} />)
       } else if (card.suit === 'S' && card.rank === 'K') {
-        return (<img className="card" alt="King Of Spades" src={kingOfSpades} />)
+        return (<img className="card" alt="King Of Spades" src={kingOfSpades} key={index} />)
       } else if (card.suit === 'H' && card.rank === 'A') {
-        return (<img className="card" alt="Ace Of Hearts" src={aceOfHearts} />)
+        return (<img className="card" alt="Ace Of Hearts" src={aceOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === '2') {
-        return (<img className="card" alt="Two Of Hearts" src={twoOfHearts} />)
+        return (<img className="card" alt="Two Of Hearts" src={twoOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === '3') {
-        return (<img className="card" alt="Three Of Hearts" src={threeOfHearts} />)
+        return (<img className="card" alt="Three Of Hearts" src={threeOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === '4') {
-        return (<img className="card" alt="Four Of Hearts" src={fourOfHearts} />)
+        return (<img className="card" alt="Four Of Hearts" src={fourOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === '5') {
-        return (<img className="card" alt="Five Of Hearts" src={fiveOfHearts} />)
+        return (<img className="card" alt="Five Of Hearts" src={fiveOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === '6') {
-        return (<img className="card" alt="Six Of Hearts" src={sixOfHearts} />)
+        return (<img className="card" alt="Six Of Hearts" src={sixOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === '7') {
-        return (<img className="card" alt="Seven Of Hearts" src={sevenOfHearts} />)
+        return (<img className="card" alt="Seven Of Hearts" src={sevenOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === '8') {
-        return (<img className="card" alt="Eight Of Hearts" src={eightOfHearts} />)
+        return (<img className="card" alt="Eight Of Hearts" src={eightOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === '9') {
-        return (<img className="card" alt="Nine Of Hearts" src={nineOfHearts} />)
+        return (<img className="card" alt="Nine Of Hearts" src={nineOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === '10') {
-        return (<img className="card" alt="Ten Of Hearts" src={tenOfHearts} />)
+        return (<img className="card" alt="Ten Of Hearts" src={tenOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === 'J') {
-        return (<img className="card" alt="Jack Of Hearts" src={jackOfHearts} />)
+        return (<img className="card" alt="Jack Of Hearts" src={jackOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === 'Q') {
-        return (<img className="card" alt="Queen Of Hearts" src={queenOfHearts} />)
+        return (<img className="card" alt="Queen Of Hearts" src={queenOfHearts} key={index} />)
       } else if (card.suit === 'H' && card.rank === 'K') {
-        return (<img className="card" alt="King Of Hearts" src={kingOfHearts} />)
+        return (<img className="card" alt="King Of Hearts" src={kingOfHearts} key={index} />)
       } else if (card.suit === 'D' && card.rank === 'A') {
-        return (<img className="card" alt="Ace Of Diamonds" src={aceOfDiamonds} />)
+        return (<img className="card" alt="Ace Of Diamonds" src={aceOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === '2') {
-        return (<img className="card" alt="Two Of Diamonds" src={twoOfDiamonds} />)
+        return (<img className="card" alt="Two Of Diamonds" src={twoOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === '3') {
-        return (<img className="card" alt="Three Of Diamonds" src={threeOfDiamonds} />)
+        return (<img className="card" alt="Three Of Diamonds" src={threeOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === '4') {
-        return (<img className="card" alt="Four Of Diamonds" src={fourOfDiamonds} />)
+        return (<img className="card" alt="Four Of Diamonds" src={fourOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === '5') {
-        return (<img className="card" alt="Five Of Diamonds" src={fiveOfDiamonds} />)
+        return (<img className="card" alt="Five Of Diamonds" src={fiveOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === '6') {
-        return (<img className="card" alt="Six Of Diamonds" src={sixOfDiamonds} />)
+        return (<img className="card" alt="Six Of Diamonds" src={sixOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === '7') {
-        return (<img className="card" alt="Seven Of Diamonds" src={sevenOfDiamonds} />)
+        return (<img className="card" alt="Seven Of Diamonds" src={sevenOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === '8') {
-        return (<img className="card" alt="Eight Of Diamonds" src={eightOfDiamonds} />)
+        return (<img className="card" alt="Eight Of Diamonds" src={eightOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === '9') {
-        return (<img className="card" alt="Nine Of Diamonds" src={nineOfDiamonds} />)
+        return (<img className="card" alt="Nine Of Diamonds" src={nineOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === '10') {
-        return (<img className="card" alt="Ten Of Diamonds" src={tenOfDiamonds} />)
+        return (<img className="card" alt="Ten Of Diamonds" src={tenOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === 'J') {
-        return (<img className="card" alt="Jack Of Diamonds" src={jackOfDiamonds} />)
+        return (<img className="card" alt="Jack Of Diamonds" src={jackOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === 'Q') {
-        return (<img className="card" alt="Queen Of Diamonds" src={queenOfDiamonds} />)
+        return (<img className="card" alt="Queen Of Diamonds" src={queenOfDiamonds} key={index} />)
       } else if (card.suit === 'D' && card.rank === 'K') {
-        return (<img className="card" alt="King Of Diamonds" src={kingOfDiamonds} />)
+        return (<img className="card" alt="King Of Diamonds" src={kingOfDiamonds} key={index} />)
       } else if (card.suit === 'C' && card.rank === 'A') {
-        return (<img className="card" alt="Ace Of Clubs" src={aceOfClubs} />)
+        return (<img className="card" alt="Ace Of Clubs" src={aceOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === '2') {
-        return (<img className="card" alt="Two Of Clubs" src={twoOfClubs} />)
+        return (<img className="card" alt="Two Of Clubs" src={twoOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === '3') {
-        return (<img className="card" alt="Three Of Clubs" src={threeOfClubs} />)
+        return (<img className="card" alt="Three Of Clubs" src={threeOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === '4') {
-        return (<img className="card" alt="Four Of Clubs" src={fourOfClubs} />)
+        return (<img className="card" alt="Four Of Clubs" src={fourOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === '5') {
-        return (<img className="card" alt="Five Of Clubs" src={fiveOfClubs} />)
+        return (<img className="card" alt="Five Of Clubs" src={fiveOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === '6') {
-        return (<img className="card" alt="Six Of Clubs" src={sixOfClubs} />)
+        return (<img className="card" alt="Six Of Clubs" src={sixOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === '7') {
-        return (<img className="card" alt="Seven Of Clubs" src={sevenOfClubs} />)
+        return (<img className="card" alt="Seven Of Clubs" src={sevenOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === '8') {
-        return (<img className="card" alt="Eight Of Clubs" src={eightOfClubs} />)
+        return (<img className="card" alt="Eight Of Clubs" src={eightOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === '9') {
-        return (<img className="card" alt="Nine Of Clubs" src={nineOfClubs} />)
+        return (<img className="card" alt="Nine Of Clubs" src={nineOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === '10') {
-        return (<img className="card" alt="Ten Of Clubs" src={tenOfClubs} />)
+        return (<img className="card" alt="Ten Of Clubs" src={tenOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === 'J') {
-        return (<img className="card" alt="Jack Of Clubs" src={jackOfClubs} />)
+        return (<img className="card" alt="Jack Of Clubs" src={jackOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === 'Q') {
-        return (<img className="card" alt="Queen Of Clubs" src={queenOfClubs} />)
+        return (<img className="card" alt="Queen Of Clubs" src={queenOfClubs} key={index} />)
       } else if (card.suit === 'C' && card.rank === 'K') {
-        return (<img className="card" alt="King Of Clubs" src={kingOfClubs} />)
+        return (<img className="card" alt="King Of Clubs" src={kingOfClubs} key={index} />)
       };
       return card;
     })
-  console.log('current hand', props.hand);
     return(
       <div className="cardContainer">
         {secondHand}

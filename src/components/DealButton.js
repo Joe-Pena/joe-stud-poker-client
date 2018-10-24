@@ -25,7 +25,7 @@ function dealButton(props) {
       <div>
         <button className="button" onClick={() => {
           if(props.chips === 0 || props.chips - props.stake < 0) {
-            return console.log('You can\' afford it');
+            return alert('You can\' afford it');
           }
           props.dispatch(dealPressed());
           props.dispatch(stakeOnTable(props.stake));
@@ -37,10 +37,7 @@ function dealButton(props) {
             suit: card.suit.name[0].toUpperCase(),
             held: false,
           }));
-          console.log(fiveCards);
-          const handArray = fiveCards.map(card => `${card.rank}${card.suit}`);
           props.dispatch(dealHand(fiveCards));
-          console.log(evaluateHand(handArray, options));
         }}>Deal</button>
       </div>
     )
@@ -64,23 +61,38 @@ function dealButton(props) {
             props.dispatch(dealPressed());
             props.dispatch(secondHand());
             //REMOVE CARDS THAT HAVE HELD: FALSE
-            const remainingCards = props.currentHand.filter(card => card.held);
-            const amountToAdd = 5 - remainingCards.length;
+            // const remainingCards = props.currentHand.filter(card => card.held);
+            let counter = 0;
+            const remainingCards = props.currentHand.map(card => {
+             if(!card.held) {
+               counter++
+               return undefined;
+             } else {
+               return card;
+             }
+            }); //[undefined, undefined, undefined, card, undefined]
+            // const amountToAdd = 5 - remainingCards.length;
             //DRAW THE SAME AMOUNT OF CARDS THAT WERE DISCARDED
-            const newCards = deck.draw(amountToAdd);
+            const newCards = deck.draw(counter);
             //MAKE NEW HAND WITH NEW CARDS
             const newSet = newCards.map(card => ({
               rank: card.rank.shortName,
               suit: card.suit.name[0].toUpperCase(),
               held: false,
             }));
-            const newHandOfCards = [...remainingCards, ...newSet];
+            let cardsToReplace = -1;
+            const newHandOfCards = remainingCards.map((card, index) => {
+              if(card === undefined){
+                cardsToReplace++
+                return newSet[cardsToReplace];
+              } else {
+                return card;
+              }
+            })
             props.dispatch(newHand(newHandOfCards));
-            console.log(newHandOfCards);
             //EVALUATE HANDS AND EDIT THE USER HAND COUNTER ASWELL AS SEND IN THE WINNINGS
             const handArray = newHandOfCards.map(card => `${card.rank}${card.suit}`);
-            console.log(props.currentHand);
-            switch(evaluateHand(handArray)) {
+            switch(evaluateHand(handArray, options)) {
               case 'royalflush':
                 props.dispatch(evalHand('royalFlush'));
                 props.dispatch(handValue(props.stake * 500));
@@ -126,8 +138,6 @@ function dealButton(props) {
             }
             props.dispatch(inPlay());
             props.dispatch(standby());
-            console.log(evaluateHand(handArray));
-            console.log('################################################################');
           }}>Redraw</button>
         </div>
       </div>
