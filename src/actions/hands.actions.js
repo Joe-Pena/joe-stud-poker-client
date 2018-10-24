@@ -147,6 +147,8 @@ export function jwtToken(token) {
 };
 
 export const logIn = (values) => dispatch => {
+  console.log('logIn dispatched');
+  console.log(values);
   return fetch('https://stud-poker-server.herokuapp.com/api/auth/login', {
     method: 'POST',
     body: JSON.stringify(values),
@@ -159,6 +161,7 @@ export const logIn = (values) => dispatch => {
     }
     return res.json()
   }).then(data => {
+    console.log('jwt token' + data.jwtToken);
     dispatch(jwtToken(data.jwtToken));
   }).catch(err => {
     return Promise.reject(err)
@@ -176,9 +179,10 @@ export const signUp = (values) => dispatch => {
     if(!res.ok) {
       return Promise.reject(res)
     }
+    console.log(res)
     return res.json()
   }).then(data => {
-    return data.createdUser
+    return dispatch(logIn(values));
   }).catch(err => {
     return Promise.reject(err)
   })

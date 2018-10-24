@@ -105,6 +105,10 @@ const cardReducer = (state = initialState, action) => {
     return Object.assign({}, state, {
       standby: !state.standby,
     });
+  } else if (action.type === 'JWT_TOKEN') {
+    return Object.assign({}, state, {
+      jwtToken: action.token,
+    });
   }
 
   return state;

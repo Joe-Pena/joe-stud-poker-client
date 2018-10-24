@@ -6,23 +6,10 @@ import {required, nonEmpty, email} from '../validators';
 import { signUp } from '../actions/hands.actions';
 
 
-export class SignUpPage extends React.Component {
-
-  onSubmit(values) {
-    return fetch('/api/users', {
-      method: 'POST',
-      body: JSON.stringify(values),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }) 
-    
-  }
-
-  render() {
+export function SignUpPage (props) {
     return(
       <div>
-        <form className="loginForm">
+        <form className="loginForm" onSubmit={props.handleSubmit}>
         <h1>Sign Up</h1>
         <Field 
           className="formField" 
@@ -57,7 +44,6 @@ export class SignUpPage extends React.Component {
         </form>
       </div>
     )
-  }
 }
 
 export default reduxForm({
