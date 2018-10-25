@@ -154,7 +154,7 @@ export function userState(user) {
   })
 };
 
-export const userUpdateDB = (user => {
+export const userUpdateDB = (user)=> dispatch => {
   const id = user.userId;
   const updateInfo = {
     hands: user.hands,
@@ -162,19 +162,20 @@ export const userUpdateDB = (user => {
     hiStake: user.hiStake,
     hiWin: user.hiWin,
   };
-  
-  return fetch(`https://stud-poker-server.herokuapp.com/api/users${id}`, {
+
+  return fetch(`https://stud-poker-server.herokuapp.com/api/users/${id}`, {
     method: 'PUT',
     body: JSON.stringify(updateInfo),
     headers: {
+      'Authorization': `Bearer ${user.jwtToken}`,
       'Content-Type': 'application/json',
     }
-  }).then(res => {
-    return res.json();
+  }).then(() => {
+    return;
   }).catch(err => {
     return Promise.reject(err);
   })
-}) 
+};
 
 export const logIn = (values) => dispatch => {
   return fetch('https://stud-poker-server.herokuapp.com/api/auth/login', {

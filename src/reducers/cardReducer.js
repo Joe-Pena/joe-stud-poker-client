@@ -84,11 +84,11 @@ const cardReducer = (state = initialState, action) => {
     });
   } else if (action.type === 'EVAL_HAND') {
     return Object.assign({}, state, {
-      hands: {...state.hands, [action.hand]: state.hands[action.hand] + 1, totalHands: state.totalHands + 1}
+      hands: {...state.hands, [action.hand]: state.hands[action.hand] + 1, totalHands: state.hands.totalHands + 1}
     });
   } else if (action.type === 'DUD_HAND') {
     return Object.assign({}, state, {
-      hands: {...state.hands, totalHands: state.totalHands + 1}
+      hands: {...state.hands, totalHands: state.hands.totalHands + 1}
     });
   } else if (action.type === 'IN_PLAY') {
     return Object.assign({}, state, {

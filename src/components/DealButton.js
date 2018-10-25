@@ -158,7 +158,8 @@ const mapStateToProps = (state) => ({
   stake: state.cards.stake,
   standby: state.cards.standby,
   userInfo: {
-    id: state.cards.userId,
+    userId: state.cards.userId,
+    jwtToken: state.cards.jwtToken,
     hands: state.cards.hands,
     chips: state.cards.chips,
     hiStake: state.cards.hiStake,
