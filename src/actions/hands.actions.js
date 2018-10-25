@@ -79,7 +79,7 @@ export const HI_WIN = 'HI_WIN';
 export function hiWin(winAmount) {
   return({
   type: HI_WIN,
-  winAmount,
+  winAmount: Number(winAmount),
   })
 };
 
@@ -87,7 +87,7 @@ export const HI_STAKE = 'HI_STAKE';
 export function hiStake(stakeAmount) {
   return({
     type: HI_STAKE,
-    stakeAmount,
+    stakeAmount: Number(stakeAmount),
   })
 };
 
@@ -97,7 +97,7 @@ export const HAND_VALUE = 'HAND_VALUE';
 export function handValue(amountWon) {
   return({
   type: HAND_VALUE,
-  amountWon,
+  amountWon: Number(amountWon),
   })
 };
 
