@@ -4,7 +4,7 @@ import PokerTable from './components/PokerTable';
 import {Provider} from 'react-redux';
 import {BrowserRouter} from 'react-router-dom';
 import store from './store';
-import 'roboto-fontface';
+import 'typeface-roboto';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<BrowserRouter>
