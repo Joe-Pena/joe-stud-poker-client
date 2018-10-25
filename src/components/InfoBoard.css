@@ -1,17 +1,21 @@
 .container {
-  width: 340px;
+  display: flex;
+  width: 32em;
+  padding: 1em;
   height: 150px;
   border-radius: 5px;
   background-color: rgb(41, 41, 41);
-  margin: 20px auto;
+  margin: auto;
+  flex-wrap: wrap;
+  flex-direction: column;
   color: white;
 }
 
 .card-column {
-  display: inline-block;
-  margin: auto;
+  margin: 0 auto;
   padding: 5px;
   list-style: none;
+  flex-basis: 20%;
 }
 
 .card-column li {
@@ -22,10 +26,10 @@
 color:gold;
 }
 
-.left {
+/* .left {
   float: left;
 }
 
 .right {
   float: right;
-}
+} */

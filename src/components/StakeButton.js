@@ -7,13 +7,13 @@ export function StakeButton(props) {
   if(props.inPlay || props.standby) {
     return (
       <div>
-        <input className="button" type="number" step="5" onChange={(e) => props.dispatch(changeStake(e.target.value))} placeholder="Stake" disabled></input>
+        <input className="button stakebtn" type="number" step="5" onChange={(e) => props.dispatch(changeStake(e.target.value))} placeholder="Stake" disabled></input>
       </div>
     )
   } else {
     return (
       <div>
-        <input className="button" type="number" step="5" onChange={(e) => props.dispatch(changeStake(e.target.value))} placeholder="Stake"></input>
+        <input className="button stakebtn" type="number" step="5" onChange={(e) => props.dispatch(changeStake(e.target.value))} placeholder="Stake"></input>
       </div>
     )
   }

@@ -9,7 +9,7 @@ import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import StakeButton from './StakeButton';
 import WelcomePage from './WelcomePage';
-// import 'typeface-roboto';
+import 'typeface-roboto';
 
 export function PokerTable(props) {
     if(!props.loggedIn) {

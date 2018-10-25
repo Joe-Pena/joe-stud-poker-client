@@ -8,8 +8,9 @@ import {required, nonEmpty} from '../validators';
 export function LoginPage(props) {
   return (
     <div>
+      <h1 className="logo">Stud Poker</h1>
       <form className="loginForm" onSubmit={props.handleSubmit}>
-      <h1>Login</h1>
+      <h2>Login</h2>
       <Field 
         className="formField" 
         type="text" 
@@ -28,8 +29,8 @@ export function LoginPage(props) {
         component="input" 
         validate={[required, nonEmpty]}
         />
-      <Link to='/signup'>sign up</Link>
       <button type="submit" className="button">Login</button>
+      <Link to='/signup'>sign up</Link>
       </form>
     </div>
   )

@@ -2,29 +2,39 @@
   background-color: rgb(39, 39, 39);
   color: white;
   border-radius: 5px;
+  padding: 5px;
   margin: auto;
   width: 350px;
 }
 
-a {
-  color: rgb(0, 204, 255);
+.logo {
+  color: white;
   text-align: center;
 }
 
-.loginForm h1 {
+a {
+  display: flex;
+  color: rgb(0, 204, 255);
+  justify-content: flex-end;
+}
+
+.loginForm h2 {
   text-align: center;
 }
 
 .button {
-  display: inline-block;
+  display: flex;
+  justify-content: flex-end;
+  margin: auto;
   background-color: gold;
   border-radius: 5px;
   font-weight: 400;
   color: rgb(40, 40, 40);
-  right: 0;
-  margin: 5px;
 }
 
+.button:hover {
+  cursor: pointer;
+}
 .formField {
   background-color: rgb(24, 24, 24);
   color: white;

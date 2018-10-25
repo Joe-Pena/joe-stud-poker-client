@@ -9,8 +9,9 @@ import { signUp } from '../actions/hands.actions';
 export function SignUpPage (props) {
     return(
       <div>
+        <h1 className="logo">Stud Poker</h1>
         <form className="loginForm" onSubmit={props.handleSubmit}>
-        <h1>Sign Up</h1>
+        <h2>Sign Up</h2>
         <Field 
           className="formField" 
           name="username" 
@@ -39,8 +40,8 @@ export function SignUpPage (props) {
           validate={[required, nonEmpty]}
           />
         {/* <Field className="formField" name="password" id="password" placeholder="password" component="input" /> */}
-        <Link to='/'>login</Link>
         <button type="submit" className="button">SignUp</button>
+        <Link to='/'>login</Link>
         </form>
       </div>
     )
