@@ -146,6 +146,28 @@ export function jwtToken(token) {
   })
 };
 
+export const USER_STATE = 'USER_STATE';
+export function userState(user) {
+  return({
+    type: USER_STATE,
+    user
+  })
+};
+
+export const userUpdateDB = (updateInfo => {
+  return fetch('https://stud-poker-server.herokuapp.com/api/users', {
+    method: 'PUT',
+    body: JSON.stringify(updateInfo),
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  }).then(res => {
+    return res.json();
+  }).catch(err => {
+    return Promise.reject(err);
+  })
+}) 
+
 export const logIn = (values) => dispatch => {
   return fetch('https://stud-poker-server.herokuapp.com/api/auth/login', {
     method: 'POST',
@@ -160,6 +182,7 @@ export const logIn = (values) => dispatch => {
     return res.json()
   }).then(data => {
     dispatch(jwtToken(data.jwtToken));
+    dispatch(userState(data.user));
   }).catch(err => {
     return Promise.reject(err)
   })

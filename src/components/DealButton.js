@@ -16,14 +16,11 @@ function dealButton(props) {
     dontAllow:[],
   }
 
+  //if deal hasn't been pressed and game is not on standby
   if(!props.dealButton && !props.standby) {
-  //DEAL BUTTON SHOULD CHANGE TO REDEAL
-  //HAVE THE OPTION HOLD CERTAIN CARDS
-  //ONCE REDEAL IS PRRESSED, THEN EVALUATE HAND, INCREASE HAND COUNTER ON STATE, AWARD CHIPS.
-
     return(
       <div>
-        <button className="button" onClick={() => {
+        <button className="button" onClick={() => { //onclick DEAL
           if(props.chips === 0 || props.chips - props.stake < 0) {
             return alert('You can\' afford it');
           }
@@ -41,7 +38,9 @@ function dealButton(props) {
         }}>Deal</button>
       </div>
     )
-  } else if (props.dealButton && !props.standby){ // TODO LOOP THROUGH CARDS AND RENDER CORRESPONDING BUTTON BASED ON THE HELD PROPERTY
+  } 
+  //if deal has been pressed once but game is not on standby
+  else if (props.dealButton && !props.standby){
     return(
       <div>
         <div>
@@ -56,12 +55,11 @@ function dealButton(props) {
           }
         </div>
         <div>
-          <button className="button" onClick={() => {
+          <button className="button" onClick={() => { //Onclick REDEAL
             props.dispatch(firstHand());
             props.dispatch(dealPressed());
             props.dispatch(secondHand());
             //REMOVE CARDS THAT HAVE HELD: FALSE
-            // const remainingCards = props.currentHand.filter(card => card.held);
             let counter = 0;
             const remainingCards = props.currentHand.map(card => {
              if(!card.held) {
@@ -70,16 +68,16 @@ function dealButton(props) {
              } else {
                return card;
              }
-            }); //[undefined, undefined, undefined, card, undefined]
-            // const amountToAdd = 5 - remainingCards.length;
+            });
             //DRAW THE SAME AMOUNT OF CARDS THAT WERE DISCARDED
             const newCards = deck.draw(counter);
-            //MAKE NEW HAND WITH NEW CARDS
+            //refactor new card objects
             const newSet = newCards.map(card => ({
               rank: card.rank.shortName,
               suit: card.suit.name[0].toUpperCase(),
               held: false,
             }));
+            //Add cards to last hand, keeping last cards in their same index position
             let cardsToReplace = -1;
             const newHandOfCards = remainingCards.map((card, index) => {
               if(card === undefined){

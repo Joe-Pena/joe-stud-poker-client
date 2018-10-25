@@ -1,5 +1,6 @@
 const initialState = {
   jwtToken: null,
+  userId: null,
   error: null,
   currentHand: [],
   cardsToHold: [false, false, false, false, false], //TODO RID OF ACTIONS AND CARDSTOHOLD
@@ -108,6 +109,14 @@ const cardReducer = (state = initialState, action) => {
   } else if (action.type === 'JWT_TOKEN') {
     return Object.assign({}, state, {
       jwtToken: action.token,
+    });
+  } else if (action.type === 'USER_STATE') {
+    return Object.assign({}, state, {
+      userId: action.user.id,
+      hands: action.user.hands,
+      chips: action.user.chips,
+      hiStake: action.user.hiStake,
+      hiWin: action.user.hiWin,
     });
   }
 
