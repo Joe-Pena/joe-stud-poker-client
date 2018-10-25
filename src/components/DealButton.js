@@ -2,7 +2,7 @@ import React from 'react';
 import './BottomButton.css';
 import {decks} from 'cards';
 import {connect} from 'react-redux';
-import {dealHand, dealPressed, holdCard, reDrawCard, stakeOnTable, evalHand, dudHand, handValue, inPlay, firstHand, secondHand, standby, newHand} from '../actions/hands.actions';
+import {dealHand, dealPressed, holdCard, reDrawCard, stakeOnTable, evalHand, dudHand, handValue, inPlay, firstHand, secondHand, standby, newHand, userUpdateDB} from '../actions/hands.actions';
 import {evaluateHand} from 'poker-ranking';
 
 function dealButton(props) {
@@ -145,6 +145,7 @@ function dealButton(props) {
       <button className="button" onClick={() => {
         props.dispatch(secondHand());
         props.dispatch(standby());
+        props.dispatch(userUpdateDB(props.userInfo))
       }}>Finish game</button>
     )
   }
@@ -156,6 +157,13 @@ const mapStateToProps = (state) => ({
   currentHand: state.cards.currentHand,
   stake: state.cards.stake,
   standby: state.cards.standby,
+  userInfo: {
+    id: state.cards.userId,
+    hands: state.cards.hands,
+    chips: state.cards.chips,
+    hiStake: state.cards.hiStake,
+    hiWin: state.cards.hiWin,
+  }
 })
 
 export default connect(mapStateToProps)(dealButton);
