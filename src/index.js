@@ -4,8 +4,14 @@ import PokerTable from './components/PokerTable';
 import {Provider} from 'react-redux';
 import {BrowserRouter} from 'react-router-dom';
 import store from './store';
-import 'typeface-roboto';
+import WebFont from 'webfontloader';
 import * as serviceWorker from './serviceWorker';
+
+WebFont.load({
+  google: {
+    families: ['Roboto', 'sans-serif']
+  }
+})
 
 ReactDOM.render(<BrowserRouter>
                   <Provider store={store}>
