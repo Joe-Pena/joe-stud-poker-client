@@ -7,9 +7,11 @@ import DealButton from './DealButton';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import StakeButton from './StakeButton';
-import WelcomePage from './WelcomePage';
+// import WelcomePage from './WelcomePage';
 import logo from '../images/studPokerFull.png';
 import 'typeface-roboto';
+// import { LandingPage } from './LandingPage';
+import WelcomePage from './WelcomePage';
 
 export function PokerTable(props) {
     if(!props.loggedIn) {

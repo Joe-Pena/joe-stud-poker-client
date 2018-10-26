@@ -1,0 +1,281 @@
+.parentView {
+  display: grid;
+  grid-template-rows: 30% 1fr;
+}
+
+.topView {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 30% 1fr 10%;
+}
+
+.bottomView {
+  background: rgb(34, 34, 34);
+  color: white;
+  display: grid;
+  padding: 5px;
+  border-radius: 2.5px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 8% 1fr 1fr 1fr 1fr;
+  min-height: 1000px;
+  align-items: center;
+}
+
+.heading {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+.logo {
+  display: block;
+  max-width: 300px;
+  margin: auto;
+}
+
+.message {
+  color: white;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+}
+
+.loginBtn {
+  background-color: gold;
+  color: rgb(43, 43, 43);
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dealbtn {
+  background-color: gold;
+  color: rgb(43, 43, 43);
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+}
+
+.holdBtn {
+  color: gold;
+  background-color: rgb(39, 39, 39);
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.instructions {
+  grid-column-start: 2;
+  grid-row-start: 1;
+  justify-self: center;
+}
+
+.instructionsObj {
+  font-size: small;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  display: grid;
+  grid-template-rows: 25% 1fr 1fr;
+}
+
+.objectiveOne {
+  grid-row-start: 1;
+}
+
+.objectiveTwo {
+  grid-row-start: 2;
+}
+
+.objectiveThree {
+  grid-row-start: 3;
+}
+
+.objectiveFour {
+  font-size: small;
+  grid-column-start: 3;
+  grid-row-start: 2;
+}
+
+.exampleCard {
+  max-width: 70px;
+  max-height: 90px;
+  margin: 0 5px 0 5px;
+  justify-self: center;
+}
+
+.randomHand {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.instructionsRedeal {
+  grid-column-start: 1;
+  grid-row-start: 3;
+  display: grid;
+  grid-template-rows: 18% 28% 30% 30%;
+  font-size: small;
+}
+
+.insRand {
+  grid-row-start: 1;
+}
+
+.insRandTwo {
+  grid-row-start: 2;
+}
+
+.insRandThree {
+  grid-row-start: 3;
+}
+
+.insRandFour {
+  grid-column-start: 3;
+  grid-row-start: 3;
+  font-size: small;
+}
+
+.newHand {
+  grid-column-start: 2;
+  grid-row-start: 3;
+  display: grid;
+  height: 100%;
+  grid-template-rows: 20% 25% 1fr;
+}
+
+.holdButtons {
+  grid-row-start: 1;
+}
+
+.newCards {
+  grid-row-start: 2;
+}
+
+.newHand p {
+  grid-row-start: 3;
+  align-self: center;
+  justify-self: center;
+}
+
+.stakebtn {
+  color: rgb(39, 39, 39);
+  background-color: gold;
+  border: none;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.handValues {
+  font-size: small;
+  grid-column: 1;
+  grid-row: 4;
+}
+
+.handNames {
+  grid-column-start: 2;
+  grid-row-start: 4;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  justify-content: center;
+}
+
+.exampleCardH {
+  max-width: 30px;
+  max-height: 50px;
+  margin: 0 2px 0 2px;
+}
+
+.royalflush {
+  grid-row-start: 1;
+}
+
+.straightflush {
+  grid-row-start: 2;
+}
+
+.fourofakind {
+  grid-row-start: 3;
+}
+
+.fullhouse {
+  grid-row-start: 4;
+}
+
+.flush {
+  grid-row-start: 5;
+}
+
+.handNamesTwo {
+  grid-column-start: 2;
+  grid-row-start: 5;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.straight {
+  grid-row-start: 1;
+}
+
+.threeofakind {
+  grid-row-start: 2;
+}
+
+.twopair{
+  grid-row-start: 3;
+}
+
+.pair {
+  grid-row-start: 4;
+}
+
+.handDesc {
+  font-size: small;
+  grid-column-start: 3;
+  grid-row-start: 4;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.handDescTwo {
+  font-size: small;
+  grid-column-start: 3;
+  grid-row-start: 5;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.royalflushdesc{
+  grid-row-start: 1;
+}
+
+.straightflushdesc{
+  grid-row-start: 2;
+}
+
+.fourofakinddesc{
+  grid-row-start: 3;
+}
+
+.fullhousedesc{
+  grid-row-start: 4;
+}
+
+.flushdesc{
+  grid-row-start: 5;
+}
+
+.straightdesc{
+  grid-row-start: 1;
+}
+
+.threeofakinddesc{
+  grid-row-start: 2;
+}
+
+.twopairdesc{
+  grid-row-start: 3;
+}
+
+.pairdesc{
+  grid-row-start: 4;
+}
+
