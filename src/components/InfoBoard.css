@@ -1,17 +1,74 @@
-.container {
-  display: flex;
-  width: 32em;
-  padding: 1em;
-  height: 150px;
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr; */
+  grid-auto-rows: minmax(10px, 30px);
+  width: 35em;
+  align-items: center;
+  padding: 10px;
+  height: auto;
   border-radius: 5px;
   background-color: rgb(41, 41, 41);
   margin: auto;
-  flex-wrap: wrap;
-  flex-direction: column;
   color: white;
 }
 
-@media only screen and (max-width: 600px) {
+ @media only screen and (max-width: 600px) {
+  .board {
+    display: grid;
+    grid-auto-rows: minmax(10px, 30px);
+    width: auto;
+    align-items: center;
+    padding: 10px;
+    height: auto;
+    border-radius: 5px;
+    background-color: rgb(41, 41, 41);
+    margin: auto;
+    color: white;
+  }
+
+  .royalFlush {
+    grid-row-start: 1;
+  }
+  
+  .fiveOfAKind {
+    grid-row-start: 2;
+  }
+  
+  .straightFlush {
+    grid-row-start: 3;
+  }
+  
+  .fourOfAKind {
+    grid-row-start: 4;
+  }
+  
+  .fullHouse {
+    grid-row-start: 5;
+  }
+  
+  .flush {
+    grid-row-start: 6;
+  }
+  
+  .straight {
+    grid-row-start: 7;
+  }
+  
+  .threeOfAKind {
+    grid-row-start: 8;
+  }
+  
+  .twoPair {
+    grid-row-start: 9;
+  }
+  
+  .pair {
+    grid-row-start: 10;
+  }
+ }
+
+/* @media only screen and (max-width: 600px) {
   .container {
     display: flex;
     width: 20em;
@@ -23,8 +80,8 @@
     flex-wrap: wrap;
     flex-direction: column;
     color: white;
-  }
-
+  } */
+/* 
   .card-column {
     margin: 0 auto;
     padding: 5px;
@@ -32,17 +89,72 @@
     list-style: none;
     flex-basis: 20%;
   }
-}
+} */
 
-.card-column {
-  margin: 0 auto;
-  padding: 5px;
+.card {
   list-style: none;
-  flex-basis: 20%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  white-space: nowrap;
 }
 
-.card-column li {
-  margin: 5px;
+.handName {
+  grid-column-start: 1;
+}
+
+.winning {
+  grid-column-start: 2;
+}
+
+.royalFlush {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.fiveOfAKind {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+
+.straightFlush {
+  grid-column-start: 1;
+  grid-row-start: 3;
+}
+
+.fourOfAKind {
+  grid-column-start: 1;
+  grid-row-start: 4;
+}
+
+.fullHouse {
+  grid-column-start: 1;
+  grid-row-start: 5;
+}
+
+.flush {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+.straight {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.threeOfAKind {
+  grid-column-start: 2;
+  grid-row-start: 3;
+}
+
+.twoPair {
+  grid-column-start: 2;
+  grid-row-start: 4;
+}
+
+.pair {
+  grid-column-start: 2;
+  grid-row-start: 5;
 }
 
 .winning {

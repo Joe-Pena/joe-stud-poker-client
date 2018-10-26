@@ -56,7 +56,7 @@ function dealButton(props) {
           }
         </div>
         <div>
-          <button className="button" onClick={() => { //Onclick REDEAL
+          <button className="button redeal" onClick={() => { //Onclick REDEAL
             props.dispatch(firstHand());
             props.dispatch(dealPressed());
             props.dispatch(secondHand());

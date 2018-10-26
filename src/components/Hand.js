@@ -171,7 +171,9 @@ export function Hand(props) {
     })
     return (
       <div className="cardContainer" >
-        {firstHand}
+        <div className="cards">
+         {firstHand}
+        </div>
       </div>
     )
   } else if(props.secondHand) {
@@ -285,7 +287,9 @@ export function Hand(props) {
     })
     return(
       <div className="cardContainer">
-        {secondHand}
+        <div className="cards">
+          {secondHand}
+        </div>
       </div>
     )
   } else {
