@@ -4,16 +4,17 @@ import {Link} from 'react-router-dom';
 import './LoginPage.css';
 import {required, nonEmpty, email} from '../validators';
 import { signUp } from '../actions/hands.actions';
+import logo from '../images/studPokerFull.png';
 
 
 export function SignUpPage (props) {
     return(
       <div>
-        <h1 className="logo">Stud Poker</h1>
-        <form className="loginForm" onSubmit={props.handleSubmit}>
-        <h2>Sign Up</h2>
+        <img className="logo" alt="Stud Poker" src={logo}/>
+        <form className="signUpForm" onSubmit={props.handleSubmit}>
+        <h2 className="message">Sign Up</h2>
         <Field 
-          className="formField" 
+          className="formField username" 
           name="username" 
           type="text"
           id="username" 
@@ -22,7 +23,7 @@ export function SignUpPage (props) {
           validate={[required, nonEmpty]}
           />
         <Field 
-          className="formField" 
+          className="formField email" 
           name="email" 
           type="text"
           id="email" 
@@ -31,7 +32,7 @@ export function SignUpPage (props) {
           validate={[required, nonEmpty, email]}
           />
         <Field 
-          className="formField" 
+          className="formField newPassword" 
           name="password" 
           type="password"
           id="password" 
@@ -40,8 +41,8 @@ export function SignUpPage (props) {
           validate={[required, nonEmpty]}
           />
         {/* <Field className="formField" name="password" id="password" placeholder="password" component="input" /> */}
-        <button type="submit" className="button">SignUp</button>
-        <Link to='/'>login</Link>
+        <button className="signupBtn" type="submit">SignUp</button>
+        <Link className="loginLink" to='/'>login</Link>
         </form>
       </div>
     )

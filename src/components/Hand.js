@@ -290,8 +290,8 @@ export function Hand(props) {
     )
   } else {
     return (
-      <div>
-        <h2>Click deal to begin</h2>
+      <div className="placeholderSpace">
+
       </div>
     )
   }

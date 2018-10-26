@@ -1,26 +1,125 @@
 .loginForm {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1.5fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "empty message empty"
+    "empty username empty"
+    "empty login link";
   background-color: rgb(39, 39, 39);
   color: white;
   border-radius: 5px;
-  padding: 5px;
   margin: auto;
-  width: 350px;
+  width: 35%;
 }
 
-.logo {
+.signUpForm {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "empty message empty"
+    "empty email empty"
+    "empty username empty"
+    "empty login link";
+  background-color: rgb(39, 39, 39);
   color: white;
+  border-radius: 5px;
+  margin: auto;
+  width: 35%;
+  /* justify-content: center; */
+}
+
+.message {
+  grid-column-start: 2;
+  grid-row-start: 1;
   text-align: center;
 }
 
-a {
+.username {
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.email {
+  grid-column-start: 2;
+  grid-row-start: 3;
+}
+
+.password {
+  grid-column-start: 2;
+  grid-row-start: 3;
+}
+
+.newPassword {
+  grid-column-start: 2;
+  grid-row-start: 4;
+}
+
+.formField {
+  background-color: rgb(24, 24, 24);
+  color: white;
+  border: none;
+  padding: 3px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.loginBtn {
+  grid-column-start: 2;
+  grid-row-start: 4;
+  background-color: gold;
+  border-radius: 5px;
+  font-weight: 400;
+  color: rgb(40, 40, 40);
+  font-weight: bold;
+  margin: 10px 30px 10px 30px;
+}
+
+.signupBtn {
+  grid-column-start: 2;
+  grid-row-start: 5;
+  background-color: gold;
+  border-radius: 5px;
+  font-weight: 400;
+  color: rgb(40, 40, 40);
+  font-weight: bold;
+  margin: 10px 30px 10px 30px;
+}
+
+
+.loginBtn:hover {
+  cursor: pointer;
+}
+
+.signupLink {
+  grid-column-start: 3;
+  grid-row-start: 4;
+  color: rgb(0, 204, 255);
+  text-align: center;
+  margin: auto;
+}
+
+.loginLink {
+  grid-column-start: 3;
+  grid-row-start: 5;
+  color: rgb(0, 204, 255);
+  text-align: center;
+  margin: auto;
+}
+
+.logo {
+  display: block;
+  max-width: 300px;
+  margin: auto;
+}
+
+/* a {
   display: flex;
   color: rgb(0, 204, 255);
   justify-content: flex-end;
 }
 
-.loginForm h2 {
-  text-align: center;
-}
 
 .button {
   display: flex;
@@ -30,6 +129,7 @@ a {
   border-radius: 5px;
   font-weight: 400;
   color: rgb(40, 40, 40);
+  font-weight: bold;
 }
 
 .button:hover {
@@ -38,10 +138,12 @@ a {
 .formField {
   background-color: rgb(24, 24, 24);
   color: white;
+  width: 60%;
+  height: 20px;
   display: block;
   margin: auto;
   margin-bottom: 10px;
   border: none;
   padding: 3px;
   border-radius: 5px;
-}
+} */

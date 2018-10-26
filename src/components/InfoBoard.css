@@ -11,6 +11,29 @@
   color: white;
 }
 
+@media only screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    width: 20em;
+    padding: 1em;
+    height: 120px;
+    border-radius: 5px;
+    background-color: rgb(41, 41, 41);
+    margin: auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    color: white;
+  }
+
+  .card-column {
+    margin: 0 auto;
+    padding: 5px;
+    font-size: 0.8em;
+    list-style: none;
+    flex-basis: 20%;
+  }
+}
+
 .card-column {
   margin: 0 auto;
   padding: 5px;
@@ -25,11 +48,3 @@
 .winning {
 color:gold;
 }
-
-/* .left {
-  float: left;
-}
-
-.right {
-  float: right;
-} */

@@ -3,9 +3,16 @@
   color: gold;
   border: none;
   padding: 2px;
-  display: inline-block;
 }
 
 .stakebtn {
   width: 60px;
+}
+
+.holdBtn {
+  color: gold;
+  background-color: rgb(39, 39, 39);
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }

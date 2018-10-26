@@ -48,9 +48,9 @@ function dealButton(props) {
           {
             props.currentHand.map((card, index) => {
               if(!card.held) {
-                return <button key={index} onClick={() => props.dispatch(holdCard(index))}>Draw</button>
+                return <button className="holdBtn" key={index} onClick={() => props.dispatch(holdCard(index))}>Draw</button>
               } else {
-                return <button key={index} onClick={() => props.dispatch(reDrawCard(index))}>Hold</button>
+                return <button className="holdBtn" key={index} onClick={() => props.dispatch(reDrawCard(index))}>Hold</button>
               }
             })
           }
