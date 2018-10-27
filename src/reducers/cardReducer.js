@@ -1,5 +1,6 @@
 const initialState = {
   jwtToken: null,
+  landing: false,
   userId: null,
   error: null,
   currentHand: [],
@@ -121,6 +122,10 @@ const cardReducer = (state = initialState, action) => {
       chips: action.user.chips,
       hiStake: action.user.hiStake,
       hiWin: action.user.hiWin,
+    });
+  } else if (action.type === 'LANDING') {
+    return Object.assign({}, state, {
+      landing: !state.landing,
     });
   }
 

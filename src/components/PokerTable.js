@@ -1,5 +1,5 @@
 import React from 'react';
-import './PokerTable.css';
+import LandingPage from './LandingPage';
 import InfoBoard from './InfoBoard';
 import Hand from './Hand';
 import ChipCounter from './ChipCounter';
@@ -7,19 +7,25 @@ import DealButton from './DealButton';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import StakeButton from './StakeButton';
-// import WelcomePage from './WelcomePage';
 import logo from '../images/studPokerFull.png';
-import 'typeface-roboto';
-// import { LandingPage } from './LandingPage';
 import WelcomePage from './WelcomePage';
+import './PokerTable.css';
+
 
 export function PokerTable(props) {
-    if(!props.loggedIn) {
+    if(!props.landing) {
+      return (
+        <LandingPage />
+      )
+    }
+
+    if(!props.loggedIn && props.landing) {
       return (
         <WelcomePage />
       )
     }
 
+    else if(props.loggedIn) {
     return (
     <div className="parentView">
       <div className="topSection">
@@ -38,25 +44,12 @@ export function PokerTable(props) {
       </div>
     </div>
     )
+  }
 }
-
-// const styles = StyleSheet.create({
-//   parentView: {
-//     flex: 1,
-//   },
-//   topView: {
-//     flex: 1,
-//   },
-//   middleView: {
-//     flex: 1,
-//   },
-//   lowerView: {
-//     flex: 1,
-//   },
-// });
 
 const mapStateToProps = (state) => ({
   loggedIn: state.cards.jwtToken,
+  landing: state.cards.landing,
 })
 
 export default withRouter(connect(mapStateToProps)(PokerTable));

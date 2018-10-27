@@ -154,6 +154,13 @@ export function userState(user) {
   })
 };
 
+export const LANDING = 'LANDING';
+export function landing() {
+  return({
+    type: LANDING,
+  })
+};
+
 export const userUpdateDB = (user)=> dispatch => {
   const id = user.userId;
   const updateInfo = {

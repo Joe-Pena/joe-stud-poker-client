@@ -1,15 +1,15 @@
-.parentView {
+.parentViewL {
   display: grid;
   grid-template-rows: 30% 1fr;
 }
 
-.topView {
+.topViewL {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 30% 1fr 10%;
 }
 
-.bottomView {
+.bottomViewL {
   background: rgb(34, 34, 34);
   color: white;
   display: grid;
@@ -17,38 +17,39 @@
   border-radius: 2.5px;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 8% 1fr 1fr 1fr 1fr;
-  min-height: 1000px;
+  min-height: 1100px;
   align-items: center;
 }
 
-.heading {
+.headingL {
   grid-column-start: 2;
   grid-row-start: 1;
 }
 
-.logo {
+.logoL {
   display: block;
   max-width: 300px;
   margin: auto;
 }
 
-.message {
+.messageL {
   color: white;
-  grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column-start: 2;
+  /* grid-column-end: 4; */
   grid-row-start: 2;
 }
 
-.loginBtn {
+.loginBtnL {
   background-color: gold;
   color: rgb(43, 43, 43);
   font-weight: bold;
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  justify-self: center;
 }
 
-.dealbtn {
+.dealbtnL {
   background-color: gold;
   color: rgb(43, 43, 43);
   font-weight: bold;
@@ -56,7 +57,7 @@
   border-radius: 5px;
 }
 
-.holdBtn {
+.holdBtnL {
   color: gold;
   background-color: rgb(39, 39, 39);
   border: none;
@@ -174,6 +175,7 @@
   grid-column-start: 2;
   grid-row-start: 4;
   display: grid;
+  grid-gap: 5px;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   justify-content: center;
 }
@@ -184,23 +186,24 @@
   margin: 0 2px 0 2px;
 }
 
-.royalflush {
+.royalflushL {
   grid-row-start: 1;
+  margin: none;
 }
 
-.straightflush {
+.straightflushL {
   grid-row-start: 2;
 }
 
-.fourofakind {
+.fourofakindL {
   grid-row-start: 3;
 }
 
-.fullhouse {
+.fullhouseL {
   grid-row-start: 4;
 }
 
-.flush {
+.flushL {
   grid-row-start: 5;
 }
 
@@ -209,21 +212,22 @@
   grid-row-start: 5;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
+  justify-content: center;
 }
 
-.straight {
+.straightL {
   grid-row-start: 1;
 }
 
-.threeofakind {
+.threeofakindL {
   grid-row-start: 2;
 }
 
-.twopair{
+.twopairL {
   grid-row-start: 3;
 }
 
-.pair {
+.pairL {
   grid-row-start: 4;
 }
 

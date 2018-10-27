@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from '../images/studPokerFull.png';
 import './LandingPage.css';
+import {connect} from 'react-redux';
+import {landing} from '../actions/hands.actions';
 import fourOfSpades from '../images/4S.png';
 import fiveOfSpades from '../images/5S.png';
 import tenOfSpades from '../images/10S.png';
@@ -35,30 +37,29 @@ import jackOfDiamonds from '../images/JD.png';
 import queenOfDiamonds from '../images/QD.png';
 import kingOfDiamonds from '../images/KD.png';
 import aceOfDiamonds from '../images/AD.png';
-import {Link} from 'react-router-dom';
 
-export function LandingPage() {
+export function LandingPage(props) {
   return(
-    <div className="parentView">
-      <div className="topView">
-      <header className="heading">
-        <img alt="studPoker" className="logo" src={logo} />
+    <div className="parentViewL">
+      <div className="topViewL">
+      <header className="headingL">
+        <img alt="studPoker" className="logoL" src={logo} />
       </header>
-        <div className="message">
+        <div className="messageL">
           <h1>Welcome to Stud Poker!</h1>
           <p>If you're unfamiliar with how poker works, look below to see the directions.</p>
           <p>Otherwise, log in below!</p>
-          <Link to='/login'><button type="link" className='loginBtn'>Start Playing!</button></Link>
+          <button type="link" className='loginBtnL' onClick={() => props.dispatch(landing())}>Start Playing!</button>
         </div>
       </div>
-      <div className="bottomView">
+      <div className="bottomViewL">
         <h1 className="instructions">Instructions</h1>
         <div className="instructionsObj">
           <p className="objectiveOne">The objective of stud poker is to get the highest value from the five cards you are given.</p>
           <p className="objectiveTwo">Once you receive your initial five card hand, you will have the opportunity to redraw up to five cards to 
             try to get the best value out of your hand. You can choose which cards you want to keep, or if not, simply redraw 
             a brand new hand!</p>
-          <p className="objectiveThree">To receive your first hand, simply click the <button className="dealbtn" disabled>Deal</button> button. 
+          <p className="objectiveThree">To receive your first hand, simply click the <button className="dealbtnL" disabled>Deal</button> button. 
             You will be dealt a random 5 card hand like the one in the right.</p>
         </div>
         <p className="objectiveFour">The value of your hand is based on the suit (symbol) and rank (number or face)
@@ -74,27 +75,27 @@ export function LandingPage() {
           <p className="insRand">We can see that the first hand is not worth much (Actually, it's worth nothing).
             What we should do is redraw a new set, and keep some cards if we want.
           </p>
-          <p className="insRandTwo">When <button className="dealbtn" disabled>Deal</button> is pressed the first time, 
-            five <button className="holdBtn" disabled>Hold</button> buttons will appear, each <button className="holdBtn" disabled>Hold</button>
+          <p className="insRandTwo">When <button className="dealbtnL" disabled>Deal</button> is pressed the first time, 
+            five <button className="holdBtnL" disabled>Hold</button> buttons will appear, each <button className="holdBtnL" disabled>Hold</button>
             represents each of the five cards in your hand. If you want to keep a card, then click on the corresponding
-            <button className="holdBtn" disabled>Hold</button> button.
+            <button className="holdBtnL" disabled>Hold</button> button.
           </p> 
-          <p className="insRandThree">You will notice that the <button className="holdBtn" disabled>Hold</button> button
-            changes to <button className="holdBtn" disabled>Redraw</button> when clicked. To stop holding that card
-            simply press the <button className="holdBtn" disabled>Redraw</button> to have it be switched with a new card.
+          <p className="insRandThree">You will notice that the <button className="holdBtnL" disabled>Hold</button> button
+            changes to <button className="holdBtnL" disabled>Redraw</button> when clicked. To stop holding that card
+            simply press the <button className="holdBtnL" disabled>Redraw</button> to have it be switched with a new card.
           </p>
         </div>
-          <p className="insRandFour">When <button className="dealbtn" disabled>Redraw</button> is pressed, the dealer
+          <p className="insRandFour">When <button className="dealbtnL" disabled>Redraw</button> is pressed, the dealer
             will deal you the amount of cards you need to complete a new five card hand, replacing the hands that you
             chose not to hold. In this example, let's keep the King of hearts.
           </p>
         <div className="newHand">
           <ul className="holdButtons">
-          <button className="holdBtn" disabled>Hold</button>
-          <button className="holdBtn" disabled>Redraw</button>
-          <button className="holdBtn" disabled>Hold</button>
-          <button className="holdBtn" disabled>Hold</button>
-          <button className="holdBtn" disabled>Hold</button>
+          <button className="holdBtnL" disabled>Hold</button>
+          <button className="holdBtnL" disabled>Redraw</button>
+          <button className="holdBtnL" disabled>Hold</button>
+          <button className="holdBtnL" disabled>Hold</button>
+          <button className="holdBtnL" disabled>Hold</button>
           </ul>
           <div className="newCards">
             <img className="exampleCard" alt="random card" src={fiveOfSpades}/>
@@ -110,7 +111,7 @@ export function LandingPage() {
         <div className="handValues">
           <p className="handExplain">In order to set a stake(a bet) you must enter the amount you will be putting on 
           the <input className="stakebtn" type="number" step="5" placeholder="Stake" disabled></input> box,
-            note that once you press the <button className="dealbtn" disabled>Deal</button> button, your stake
+            note that once you press the <button className="dealbtnL" disabled>Deal</button> button, your stake
             will be "on the table", meaning the bet is set and your chips will not be coming back unless you make a win.
           </p>
           <p className="handExplainTwo">
@@ -119,86 +120,88 @@ export function LandingPage() {
           </p>
         </div>
         <div className="handNames">
-          <div className="royalflush">
-            <img className="exampleCardH" alt="random card" src={tenOfSpades}/>
-            <img className="exampleCardH" alt="random card" src={jackOfSpades}/>
-            <img className="exampleCardH" alt="random card" src={queenOfSpades}/>
-            <img className="exampleCardH" alt="random card" src={kingOfSpades}/>
-            <img className="exampleCardH" alt="random card" src={aceOfSpades}/>
+          <div className="royalflushL">
+            <img className="exampleCardH royalflushL" alt="random card" src={tenOfSpades}/>
+            <img className="exampleCardH royalflushL" alt="random card" src={jackOfSpades}/>
+            <img className="exampleCardH royalflushL" alt="random card" src={queenOfSpades}/>
+            <img className="exampleCardH royalflushL" alt="random card" src={kingOfSpades}/>
+            <img className="exampleCardH royalflushL" alt="random card" src={aceOfSpades}/>
           </div>
-          <div className="straightflush">
-            <img className="exampleCardH" alt="random card" src={sixOfClubs}/>
-            <img className="exampleCardH" alt="random card" src={sevenOfClubs}/>
-            <img className="exampleCardH" alt="random card" src={eightOfClubs}/>
-            <img className="exampleCardH" alt="random card" src={nineOfClubs}/>
-            <img className="exampleCardH" alt="random card" src={tenOfClubs}/>
+          <div className=" straightflushL">
+            <img className="exampleCardH straightflushL" alt="random card" src={sixOfClubs}/>
+            <img className="exampleCardH straightflushL" alt="random card" src={sevenOfClubs}/>
+            <img className="exampleCardH straightflushL" alt="random card" src={eightOfClubs}/>
+            <img className="exampleCardH straightflushL" alt="random card" src={nineOfClubs}/>
+            <img className="exampleCardH straightflushL" alt="random card" src={tenOfClubs}/>
           </div>
-          <div className="fourofakind">
-            <img className="exampleCardH" alt="random card" src={kingOfSpades}/>
-            <img className="exampleCardH" alt="random card" src={kingOfHearts}/>
-            <img className="exampleCardH" alt="random card" src={kingOfClubs}/>
-            <img className="exampleCardH" alt="random card" src={kingOfDiamonds}/>
-            <img className="exampleCardH" alt="random card" src={fiveOfSpades}/>
+          <div className=" fourofakindL">
+            <img className="exampleCardH fourofakindL" alt="random card" src={kingOfSpades}/>
+            <img className="exampleCardH fourofakindL" alt="random card" src={kingOfHearts}/>
+            <img className="exampleCardH fourofakindL" alt="random card" src={kingOfClubs}/>
+            <img className="exampleCardH fourofakindL" alt="random card" src={kingOfDiamonds}/>
+            <img className="exampleCardH fourofakindL" alt="random card" src={fiveOfSpades}/>
           </div>
-          <div className="fullhouse">
-            <img className="exampleCardH" alt="random card" src={aceOfDiamonds}/>
-            <img className="exampleCardH" alt="random card" src={aceOfHearts}/>
-            <img className="exampleCardH" alt="random card" src={aceOfClubs}/>
-            <img className="exampleCardH" alt="random card" src={tenOfHearts}/>
-            <img className="exampleCardH" alt="random card" src={tenOfDiamonds}/>
+          <div className=" fullhouseL">
+            <img className="exampleCardH fullhouseL" alt="random card" src={aceOfDiamonds}/>
+            <img className="exampleCardH fullhouseL" alt="random card" src={aceOfHearts}/>
+            <img className="exampleCardH fullhouseL" alt="random card" src={aceOfClubs}/>
+            <img className="exampleCardH fullhouseL" alt="random card" src={tenOfHearts}/>
+            <img className="exampleCardH fullhouseL" alt="random card" src={tenOfDiamonds}/>
           </div>
-          <div className="flush">
-            <img className="exampleCardH" alt="random card" src={twoOfDiamonds}/>
-            <img className="exampleCardH" alt="random card" src={kingOfDiamonds}/>
-            <img className="exampleCardH" alt="random card" src={eightOfDiamonds}/>
-            <img className="exampleCardH" alt="random card" src={aceOfDiamonds}/>
-            <img className="exampleCardH" alt="random card" src={fiveOfDiamonds}/>
+          <div className=" flushL">
+            <img className="exampleCardH flushL" alt="random card" src={twoOfDiamonds}/>
+            <img className="exampleCardH flushL" alt="random card" src={kingOfDiamonds}/>
+            <img className="exampleCardH flushL" alt="random card" src={eightOfDiamonds}/>
+            <img className="exampleCardH flushL" alt="random card" src={aceOfDiamonds}/>
+            <img className="exampleCardH flushL" alt="random card" src={fiveOfDiamonds}/>
           </div>
         </div>
         <div className="handNamesTwo">
-          <div className="straight">
-            <img className="exampleCardH" alt="random card" src={threeOfDiamonds}/>
-            <img className="exampleCardH" alt="random card" src={fourOfSpades}/>
-            <img className="exampleCardH" alt="random card" src={fiveOfDiamonds}/>
-            <img className="exampleCardH" alt="random card" src={sixOfHearts}/>
-            <img className="exampleCardH" alt="random card" src={sevenOfClubs}/>
+          <div className="straightL">
+            <img className="exampleCardH straightL" alt="random card" src={threeOfDiamonds}/>
+            <img className="exampleCardH straightL" alt="random card" src={fourOfSpades}/>
+            <img className="exampleCardH straightL" alt="random card" src={fiveOfDiamonds}/>
+            <img className="exampleCardH straightL" alt="random card" src={sixOfHearts}/>
+            <img className="exampleCardH straightL" alt="random card" src={sevenOfClubs}/>
           </div>
-          <div className="threeofakind">
-            <img className="exampleCardH" alt="random card" src={aceOfClubs}/>
-            <img className="exampleCardH" alt="random card" src={aceOfDiamonds}/>
-            <img className="exampleCardH" alt="random card" src={aceOfSpades}/>
-            <img className="exampleCardH" alt="random card" src={fiveOfHearts}/>
-            <img className="exampleCardH" alt="random card" src={kingOfClubs}/>
+          <div className="threeofakindL">
+            <img className="exampleCardH threeofakindL" alt="random card" src={aceOfClubs}/>
+            <img className="exampleCardH threeofakindL" alt="random card" src={aceOfDiamonds}/>
+            <img className="exampleCardH threeofakindL" alt="random card" src={aceOfSpades}/>
+            <img className="exampleCardH threeofakindL" alt="random card" src={fiveOfHearts}/>
+            <img className="exampleCardH threeofakindL" alt="random card" src={kingOfClubs}/>
           </div>
-          <div className="twopair">
-            <img className="exampleCardH" alt="random card" src={twoOfDiamonds}/>
-            <img className="exampleCardH" alt="random card" src={twoOfHearts}/>
-            <img className="exampleCardH" alt="random card" src={fiveOfSpades}/>
-            <img className="exampleCardH" alt="random card" src={fiveOfDiamonds}/>
-            <img className="exampleCardH" alt="random card" src={jackOfDiamonds}/>
+          <div className="twopairL">
+            <img className="exampleCardH twopairL" alt="random card" src={twoOfDiamonds}/>
+            <img className="exampleCardH twopairL" alt="random card" src={twoOfHearts}/>
+            <img className="exampleCardH twopairL" alt="random card" src={fiveOfSpades}/>
+            <img className="exampleCardH twopairL" alt="random card" src={fiveOfDiamonds}/>
+            <img className="exampleCardH twopairL" alt="random card" src={jackOfDiamonds}/>
           </div>
-          <div className="pair">
-            <img className="exampleCardH" alt="random card" src={twoOfDiamonds}/>
-            <img className="exampleCardH" alt="random card" src={aceOfDiamonds}/>
-            <img className="exampleCardH" alt="random card" src={eightOfHearts}/>
-            <img className="exampleCardH" alt="random card" src={aceOfClubs}/>
-            <img className="exampleCardH" alt="random card" src={fiveOfSpades}/>
+          <div className="pairL">
+            <img className="exampleCardH pairL" alt="random card" src={twoOfDiamonds}/>
+            <img className="exampleCardH pairL" alt="random card" src={aceOfDiamonds}/>
+            <img className="exampleCardH pairL" alt="random card" src={eightOfHearts}/>
+            <img className="exampleCardH pairL" alt="random card" src={aceOfClubs}/>
+            <img className="exampleCardH pairL" alt="random card" src={fiveOfSpades}/>
           </div>
         </div>
         <div className="handDesc">
-          <p className="royalflushdesc">10, J, Q, K, and A all of the same suit <span className="winning">x500</span></p>
-          <p className="straightflushdesc">Rank in order and same suit <span className="winning">x50</span></p>
-          <p className="fourofakinddesc">Four cards of the same rank <span className="winning">x20</span></p>
-          <p className="fullhousedesc">Three cards of the same rank, then a pair <span className="winning">x10</span></p>
-          <p className="flushdesc">All cards are the same suit <span className="winning">x4</span></p>
+          <p className="royalflushdesc">Royalflush: 10, J, Q, K, and A all of the same suit <span className="winning">x500</span></p>
+          <p className="straightflushdesc">Straight Flush: Rank in order and same suit <span className="winning">x50</span></p>
+          <p className="fourofakinddesc">Four of a kind: Four cards of the same rank <span className="winning">x20</span></p>
+          <p className="fullhousedesc">Full House: Three cards of the same rank, then a pair <span className="winning">x10</span></p>
+          <p className="flushdesc">Flush: All cards are the same suit <span className="winning">x4</span></p>
         </div>
         <div className="handDescTwo">
-          <p className="straightdesc">Card ranks in order <span className="winning">x3</span></p>
-          <p className="threeofakinddesc">Three cards of the same rank <span className="winning">x2</span></p>
-          <p className="twopair">Two pairs of the same rank <span className="winning">x1</span></p>
-          <p className="pair">A pair of the same rank <span className="winning">x0.5</span></p>
+          <p className="straightdesc">Straight: Card ranks in order <span className="winning">x3</span></p>
+          <p className="threeofakinddesc">Three of a kind: Three cards of the same rank <span className="winning">x2</span></p>
+          <p className="twopairdesc">Two Pair: Two pairs of the same rank <span className="winning">x1</span></p>
+          <p className="pairdesc">Pair: Two cards of the same rank <span className="winning">x0.5</span></p>
         </div>
       </div>
     </div>
   )
 }
+
+export default connect()(LandingPage);
