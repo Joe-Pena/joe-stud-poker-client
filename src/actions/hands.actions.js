@@ -193,6 +193,7 @@ export const logIn = (values) => dispatch => {
     }
   }).then(res => {
     if(!res.ok) {
+      alert('Username and/or password are incorrect');
       return Promise.reject(res)
     }
     return res.json()

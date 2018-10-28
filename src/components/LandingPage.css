@@ -37,6 +37,7 @@
   grid-column-start: 2;
   /* grid-column-end: 4; */
   grid-row-start: 2;
+  justify-content: center;
 }
 
 .loginBtnL {
@@ -46,7 +47,7 @@
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  margin: auto;
+  justify-self: center;
 }
 
 .dealbtnL {
