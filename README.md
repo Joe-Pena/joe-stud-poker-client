@@ -23,21 +23,9 @@ Then the better the hand, the more chips you win!
 
 # API
 
-https://stud-poker-server.herokuapp.com/
+Stud Poker Server API:
 
-The API is used to create users aswell as logging in.
-
-endpoint: /api/users, make a POST request here with a json body including:
-
-
-    "username": "your_username",
-    "email": "your_email",
-    "password": "your_password"
-
-
-endpoint: /auth/login
-Login by making a POST to request and sending in your username and password as JSON in the body.
-A succesful login will provide the user with a jwt token to be used for the remainder of the session.
+https://github.com/thinkful-ei24/joe-stud-poker-server
 
 # Stack
 
