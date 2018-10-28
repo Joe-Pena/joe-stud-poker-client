@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import './StatSection.css';
 
 export function StatSection(props) {
-  console.log(props.username);
   return(
     <div className="statContainer">
       <h2 className="sUsername">{props.username}</h2>

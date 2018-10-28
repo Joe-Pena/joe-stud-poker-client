@@ -7,9 +7,9 @@ Stud Poker is a single hand poker game.
 
 Before playing, use the following demo account to login:
 
-Username: test
+Username: Demo
 
-Password: asdfqwer
+Password: abcd1234
 
 https://dashboard.heroku.com/apps/stud-poker-client
 

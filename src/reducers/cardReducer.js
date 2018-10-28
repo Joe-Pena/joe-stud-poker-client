@@ -70,7 +70,6 @@ const cardReducer = (state = initialState, action) => {
     });
   } else if (action.type === 'HI_STAKE') {
     if(action.stakeAmount > state.hiStake) {
-      console.log('current hiStake: ', state.hiStake, 'curent stake: ', action.stakeAmount);
       return Object.assign({}, state, {
         hiStake: action.stakeAmount
       });
@@ -78,7 +77,6 @@ const cardReducer = (state = initialState, action) => {
     return state;
   } else if(action.type === 'HI_WIN') {
     if(action.winAmount > state.hiWin) {
-      console.log('New highest win!', action.winAmount);
       return Object.assign({}, state, {
         hiWin: action.winAmount,
       });

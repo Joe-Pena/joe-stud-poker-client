@@ -200,7 +200,6 @@ export const logIn = (values) => dispatch => {
   }).then(data => {
     dispatch(jwtToken(data.jwtToken));
     dispatch(userState(data.user));
-    console.log(data.user);
   }).catch(err => {
     return Promise.reject(err)
   })
@@ -217,7 +216,6 @@ export const signUp = (values) => dispatch => {
     if(!res.ok) {
       return Promise.reject(res)
     }
-    console.log(res)
     return res.json()
   }).then(data => {
     return dispatch(logIn(values));
