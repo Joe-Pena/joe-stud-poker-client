@@ -1,8 +1,8 @@
 const initialState = {
-  jwtToken: 'llll', //TO NULL
-  landing: true, //TO FALSE
+  jwtToken: null, //TO NULL
+  landing: false, //TO FALSE
   userId: null,
-  username: 'PLACEHOLDER',//to null
+  username: null,//to null
   error: null,
   currentHand: [],
   cardsToHold: [false, false, false, false, false], //TODO RID OF ACTIONS AND CARDSTOHOLD
