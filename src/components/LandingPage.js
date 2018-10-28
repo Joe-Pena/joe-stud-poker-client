@@ -90,13 +90,13 @@ export function LandingPage(props) {
             chose not to hold. In this example, let's keep the King of hearts.
           </p>
         <div className="newHand">
-          <ul className="holdButtons">
+          <div className="holdButtons">
           <button className="holdBtnL" disabled>Hold</button>
           <button className="holdBtnL" disabled>Redraw</button>
           <button className="holdBtnL" disabled>Hold</button>
           <button className="holdBtnL" disabled>Hold</button>
           <button className="holdBtnL" disabled>Hold</button>
-          </ul>
+          </div>
           <div className="newCards">
             <img className="exampleCard" alt="random card" src={fiveOfSpades}/>
             <img className="exampleCard" alt="random card" src={kingOfHearts}/>
