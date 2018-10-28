@@ -1,7 +1,8 @@
 const initialState = {
-  jwtToken: null,
-  landing: false,
+  jwtToken: 'llll', //TO NULL
+  landing: true, //TO FALSE
   userId: null,
+  username: 'PLACEHOLDER',//to null
   error: null,
   currentHand: [],
   cardsToHold: [false, false, false, false, false], //TODO RID OF ACTIONS AND CARDSTOHOLD
@@ -118,6 +119,7 @@ const cardReducer = (state = initialState, action) => {
   } else if (action.type === 'USER_STATE') {
     return Object.assign({}, state, {
       userId: action.user.id,
+      username: action.user.username,
       hands: action.user.hands,
       chips: action.user.chips,
       hiStake: action.user.hiStake,

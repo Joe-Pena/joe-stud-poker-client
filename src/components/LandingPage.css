@@ -46,7 +46,7 @@
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  justify-self: center;
+  margin: auto;
 }
 
 .dealbtnL {

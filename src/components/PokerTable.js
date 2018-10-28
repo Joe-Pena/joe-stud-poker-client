@@ -10,6 +10,7 @@ import StakeButton from './StakeButton';
 import logo from '../images/studPokerFull.png';
 import WelcomePage from './WelcomePage';
 import './PokerTable.css';
+import StatSection from './StatSection';
 
 
 export function PokerTable(props) {
@@ -41,6 +42,9 @@ export function PokerTable(props) {
         <ChipCounter className="counter"/>
         <DealButton className="deal"/>
         <StakeButton className="stake"/>
+        <div className="controllerLine">
+        </div>
+        <StatSection className="stats"/>
       </div>
     </div>
     )
