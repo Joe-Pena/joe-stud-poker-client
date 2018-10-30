@@ -3,6 +3,7 @@ const initialState = {
   landing: false, //TO FALSE
   userId: null,
   username: null,//to null
+  email: null,
   error: null,
   currentHand: [],
   cardsToHold: [false, false, false, false, false], //TODO RID OF ACTIONS AND CARDSTOHOLD
@@ -118,6 +119,7 @@ const cardReducer = (state = initialState, action) => {
     return Object.assign({}, state, {
       userId: action.user.id,
       username: action.user.username,
+      email: action.user.email,
       hands: action.user.hands,
       chips: action.user.chips,
       hiStake: action.user.hiStake,

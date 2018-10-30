@@ -164,6 +164,8 @@ export function landing() {
 export const userUpdateDB = (user)=> dispatch => {
   const id = user.userId;
   const updateInfo = {
+    username: user.username,
+    email: user.email,
     hands: user.hands,
     chips: user.chips,
     hiStake: user.hiStake,
@@ -193,7 +195,7 @@ export const logIn = (values) => dispatch => {
     }
   }).then(res => {
     if(!res.ok) {
-      alert('Username and/or password are incorrect');
+      // alert('Username and/or password are incorrect');
       return Promise.reject(res)
     }
     return res.json()

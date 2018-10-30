@@ -170,6 +170,8 @@ const mapStateToProps = (state) => ({
   standby: state.cards.standby,
   userInfo: {
     userId: state.cards.userId,
+    username: state.cards.username,
+    email: state.cards.email,
     jwtToken: state.cards.jwtToken,
     hands: state.cards.hands,
     chips: state.cards.chips,
