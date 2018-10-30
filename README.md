@@ -11,7 +11,7 @@ Username: Demo
 
 Password: abcd1234
 
-https://dashboard.heroku.com/apps/stud-poker-client
+https://stud-poker-client.herokuapp.com/
 
 If you're unfamiliar with how poker works, simply have a look at the landing page's instructions.
 
