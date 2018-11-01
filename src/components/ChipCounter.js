@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 export function chipCounter(props) {
   return(
     <div>
-      <button className="button">Chips: {props.chips}</button>
+      <button className="button chipBtnCounter">Chips: {props.chips}</button>
     </div>
   )
 }

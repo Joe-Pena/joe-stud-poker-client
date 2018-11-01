@@ -34,7 +34,7 @@ width: 100%;
   border-radius: 0 0 5px 5px;
   grid-template-columns: 1fr 2fr 1fr;
   min-height: 300px;
-  grid-template-rows: 15% 5% 1fr;
+  grid-template-rows: 10% 1fr;
   justify-items: center;
 }
 

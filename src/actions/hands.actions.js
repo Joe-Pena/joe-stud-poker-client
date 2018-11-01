@@ -1,3 +1,5 @@
+import {insertAuthToken, eraseAuthToken} from '../local-storage';
+
 export const DEAL_HAND = 'DEAL_HAND';
 export function dealHand(hand) {
   return({
@@ -161,8 +163,58 @@ export function landing() {
   })
 };
 
-export const userUpdateDB = (user)=> dispatch => {
+export const LOGOUT = 'LOGOUT';
+export function logout() {
+  eraseAuthToken();
+  return({
+    type: LOGOUT,
+  })
+};
+
+export const REFILL = 'REFILL';
+export function refill() {
+  return({
+    type: REFILL,
+  })
+};
+
+export const saveAuthToken = jwtToken => dispatch => {
+  try {
+      localStorage.setItem('authToken', jwtToken);
+  } catch (err) {}
+};
+
+export const loadAuthToken = () => dispatch => {
+  console.log('getting da token');
+  try {
+  return localStorage.getItem('authToken');
+  } catch(err) {}
+};
+
+export const refreshUser = (user)=> dispatch => {
   const id = user.userId;
+
+  return fetch(`https://stud-poker-server.herokuapp.com/api/users/${id}`, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${user.jwtToken}`,
+    }
+  }).then(response => {
+    if(!response.ok) {
+      return Promise.reject(response);
+    }
+
+    return response.json();
+  }).then(data => {
+    return dispatch(userState(data));
+  }).catch(err => {
+    return Promise.reject(err);
+  })
+};
+
+export const userUpdateDB = (user)=> (dispatch, getState) => {
+  const id = getState().cards.userId;
+  console.log('id for update', id);
   const updateInfo = {
     username: user.username,
     email: user.email,
@@ -202,12 +254,14 @@ export const logIn = (values) => dispatch => {
   }).then(data => {
     dispatch(jwtToken(data.jwtToken));
     dispatch(userState(data.user));
+    insertAuthToken(data.jwtToken);
   }).catch(err => {
     return Promise.reject(err)
   })
 }
 
 export const signUp = (values) => dispatch => {
+  console.log(values);
   return fetch('https://stud-poker-server.herokuapp.com/api/users', {
     method: 'POST',
     body: JSON.stringify(values),
@@ -215,7 +269,11 @@ export const signUp = (values) => dispatch => {
       'Content-Type': 'application/json',
     }
   }).then(res => {
-    if(!res.ok) {
+    if(values.password.length < 8) {
+      alert('Password must be at least 8 characters long');
+      return Promise.reject(res);
+    }
+    else if(!res.ok) {
       return Promise.reject(res)
     }
     return res.json()
@@ -225,3 +283,27 @@ export const signUp = (values) => dispatch => {
     return Promise.reject(err)
   })
 }
+
+export const refreshToken = () => (dispatch, getState) => {
+  const authToken = getState().cards.jwtToken;
+  console.log('user after restet', getState().cards.userId);
+  return fetch(`https://stud-poker-server.herokuapp.com/api/auth/refresh`, {
+      method: 'POST',
+      headers: {
+          // Provide our existing token as credentials to get a new one
+          Authorization: `Bearer ${authToken}`
+      }
+  })
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        console.log('refreshed data', data.user);
+        dispatch(jwtToken(data.jwtToken));
+        dispatch(userState(data.user));
+      })
+      .catch(err => {
+          dispatch(logout());
+          return Promise.reject(err);
+      });
+};

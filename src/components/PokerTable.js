@@ -11,22 +11,24 @@ import logo from '../images/studPokerFull.png';
 import WelcomePage from './WelcomePage';
 import './PokerTable.css';
 import StatSection from './StatSection';
+import { loadAuthToken, jwtToken, landing, refreshUser} from '../actions/hands.actions';
 
 
 export function PokerTable(props) {
+
     if(!props.landing) {
       return (
         <LandingPage />
       )
     }
 
-    if(!props.loggedIn && props.landing) {
+    else if(!props.loggedIn && props.landing) {
       return (
         <WelcomePage />
       )
     }
 
-    else if(props.loggedIn) {
+    else if(props.loggedIn && props.landing) {
     return (
     <div className="parentView">
       <div className="topSection">
@@ -54,6 +56,16 @@ export function PokerTable(props) {
 const mapStateToProps = (state) => ({
   loggedIn: state.cards.jwtToken,
   landing: state.cards.landing,
+  userInfo: {
+    userId: state.cards.userId,
+    username: state.cards.username,
+    email: state.cards.email,
+    jwtToken: state.cards.jwtToken,
+    hands: state.cards.hands,
+    chips: state.cards.chips,
+    hiStake: state.cards.hiStake,
+    hiWin: state.cards.hiWin,
+  }
 })
 
 export default withRouter(connect(mapStateToProps)(PokerTable));

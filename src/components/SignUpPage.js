@@ -9,7 +9,7 @@ import logo from '../images/studPokerFull.png';
 
 export function SignUpPage (props) {
     return(
-      <div>
+      <div className="loginsignupContainer">
         <img className="logo" alt="Stud Poker" src={logo}/>
         <form className="signUpForm" onSubmit={props.handleSubmit}>
         <h2 className="message">Sign Up</h2>

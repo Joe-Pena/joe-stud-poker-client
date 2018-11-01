@@ -49,8 +49,8 @@ export function LandingPage(props) {
           <h1>Welcome to Stud Poker!</h1>
           <p>If you're unfamiliar with how poker works, look below to see the directions.</p>
           <p>Otherwise, log in below!</p>
-          <button type="link" className='loginBtnL' onClick={() => props.dispatch(landing())}>Start Playing!</button>
         </div>
+          <button type="link" className='loginBtnL' onClick={() => props.dispatch(landing())}>Start Playing!</button>
       </div>
       <div className="bottomViewL">
         <h1 className="instructions">Instructions</h1>

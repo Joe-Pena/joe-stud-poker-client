@@ -8,7 +8,7 @@ import logo from '../images/studPokerFull.png';
 
 export function LoginPage(props) {
   return (
-    <div>
+    <div className="loginsignupContainer">
       <img className="logo" alt="Stud Poker" src={logo}/>
       <form className="loginForm" onSubmit={props.handleSubmit}>
         <h2 className="message">Welcome!</h2>
@@ -30,7 +30,7 @@ export function LoginPage(props) {
             component="input" 
             validate={[required, nonEmpty]}
             />
-          <button type="submit" className="button loginBtn">Login</button>
+          <button type="submit" className="LloginBtn">Login</button>
         <Link className="signupLink" to='/signup'>sign up</Link>
       </form>
     </div>

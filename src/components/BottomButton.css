@@ -2,8 +2,16 @@
   color: rgb(39, 39, 39);
   background-color: gold;
   border: none;
+  width: 80px;
+  height: 25px;
+  font-weight: 600;
+  font-size: 1.2em;
   border-radius: 5px;
   padding: 2px;
+}
+
+.chipBtnCounter {
+  width: 120px;
 }
 
 .redeal {

@@ -2,7 +2,7 @@ import React from 'react';
 import './BottomButton.css';
 import {decks} from 'cards';
 import {connect} from 'react-redux';
-import {dealHand, dealPressed, holdCard, reDrawCard, stakeOnTable, evalHand, dudHand, handValue, inPlay, firstHand, secondHand, standby, newHand, userUpdateDB, hiStake, hiWin} from '../actions/hands.actions';
+import {dealHand, dealPressed, holdCard, reDrawCard, stakeOnTable, evalHand, dudHand, handValue, inPlay, firstHand, secondHand, standby, newHand, userUpdateDB, hiStake, hiWin, changeStake} from '../actions/hands.actions';
 import {evaluateHand} from 'poker-ranking';
 
 function dealButton(props) {
@@ -22,7 +22,9 @@ function dealButton(props) {
       <div>
         <button className="button" onClick={() => { //onclick DEAL
           if(props.chips === 0 || props.chips - props.stake < 0) {
-            return alert('You can\' afford it');
+            return alert('You can\' afford it, bet an smaller amount');
+          } else if (props.stake === 0) {
+            return alert('You must at least bet 1 chip as the stake');
           }
           props.dispatch(dealPressed());
           props.dispatch(stakeOnTable(props.stake));
@@ -156,8 +158,9 @@ function dealButton(props) {
       <button className="button" onClick={() => {
         props.dispatch(secondHand());
         props.dispatch(standby());
-        props.dispatch(userUpdateDB(props.userInfo))
-      }}>Finish game</button>
+        props.dispatch(userUpdateDB(props.userInfo));
+        props.dispatch(changeStake(0));
+      }}>Finish</button>
     )
   }
 }

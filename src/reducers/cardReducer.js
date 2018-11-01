@@ -129,6 +129,12 @@ const cardReducer = (state = initialState, action) => {
     return Object.assign({}, state, {
       landing: !state.landing,
     });
+  } else if (action.type === 'LOGOUT') {
+    return Object.assign({}, initialState);
+  } else if (action.type === 'REFILL') {
+    return Object.assign({}, state, {
+      chips: state.chips + 2000,
+    });
   }
 
   return state;
