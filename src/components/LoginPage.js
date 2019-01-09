@@ -4,7 +4,7 @@ import './LoginPage.css';
 import {Link} from 'react-router-dom';
 import {logIn} from '../actions/hands.actions';
 import {required, nonEmpty} from '../validators';
-import logo from '../images/studPokerFull.png';
+import logo from '../images/studPokerFull.svg';
 
 export function LoginPage(props) {
   return (

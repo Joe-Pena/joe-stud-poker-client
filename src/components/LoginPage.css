@@ -1,21 +1,24 @@
 .loginsignupContainer {
   display: grid;
   grid-template-rows: 40% 1fr;
+  grid-template-areas: 
+    "logo"
+    "form";
 }
 
 .loginForm {
-  grid-row-start: 2;
+  grid-area: form;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1.5fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1.5fr 1fr 1fr;
   grid-template-areas:
-    "empty message empty"
-    "empty username empty"
-    "empty login link";
-  background-color: rgb(39, 39, 39);
-  color: white;
-  border-radius: 5px;
-  margin: auto;
+    ". message ."
+    ". form ."
+    ". login link";
+  background-color: transparent;
+  color: black;
+  border: 5px solid rgb(40,40,40);
+  justify-self: center;
   width: 35%;
 }
 
@@ -25,21 +28,20 @@
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr;
   grid-template-areas:
-    "empty message empty"
-    "empty email empty"
-    "empty username empty"
-    "empty login link";
-  background-color: rgb(39, 39, 39);
-  color: white;
-  border-radius: 5px;
+    ". message ."
+    ". email ."
+    ". username ."
+    ". login link";
+  background-color: transparent;
+  border: 5px solid rgb(40, 40, 40);
+  color: black;
   margin: auto;
   width: 35%;
   /* justify-content: center; */
 }
 
 .message {
-  grid-column-start: 2;
-  grid-row-start: 1;
+  grid-area: message;
   text-align: center;
 }
 
@@ -64,35 +66,34 @@
 }
 
 .formField {
-  background-color: rgb(24, 24, 24);
-  color: white;
-  border: none;
+  background-color: transparent;
+  color: black;
+  border: 3px solid red;
   padding: 3px;
-  border-radius: 5px;
   margin: 5px;
+}
+
+.formField::placeholder {
+  color: red;
+  text-align: center;
 }
 
 .LloginBtn {
   grid-column-start: 2;
   grid-row-start: 4;
-  background-color: gold;
-  border: none;
-  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid red;
   font-weight: 400;
-  color: rgb(40, 40, 40);
-  font-weight: bold;
+  color: red;
   margin: 10px 30px 10px 30px;
 }
 
 .signupBtn {
   grid-column-start: 2;
   grid-row-start: 5;
-  background-color: gold;
-  border-radius: 5px;
-  border: none;
-  font-weight: 400;
-  color: rgb(40, 40, 40);
-  font-weight: bold;
+  background-color: transparent;
+  border: 3px solid red;
+  color: red;
   margin: 10px 30px 10px 30px;
 }
 
@@ -104,7 +105,7 @@
 .signupLink {
   grid-column-start: 3;
   grid-row-start: 4;
-  color: rgb(0, 204, 255);
+  color: red;
   text-align: center;
   margin: auto;
 }
@@ -112,7 +113,7 @@
 .loginLink {
   grid-column-start: 3;
   grid-row-start: 5;
-  color: rgb(0, 204, 255);
+  color: red;
   text-align: center;
   margin: auto;
 }
