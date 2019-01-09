@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../images/studPokerFull.png';
+import logo from '../images/studPokerFull.svg';
 import './LandingPage.css';
 import {connect} from 'react-redux';
 import {landing} from '../actions/hands.actions';
@@ -48,7 +48,7 @@ export function LandingPage(props) {
         <div className="messageL">
           <h1>Welcome to Stud Poker!</h1>
           <p>If you're unfamiliar with how poker works, look below to see the directions.</p>
-          <p>Otherwise, log in below!</p>
+          <p>Otherwise, press Start Playing!</p>
         </div>
           <button type="link" className='loginBtnL' onClick={() => props.dispatch(landing())}>Start Playing!</button>
       </div>
@@ -110,7 +110,7 @@ export function LandingPage(props) {
         </div>
         <div className="handValues">
           <p className="handExplain">In order to set a stake(a bet) you must enter the amount you will be putting on 
-          the <input className="stakebtn" type="number" step="5" placeholder="Stake" disabled></input> box,
+          the <input className="stakebtnL" placeholder="Stake" disabled></input> box,
             note that once you press the <button className="dealbtnL" disabled>Deal</button> button, your stake
             will be "on the table", meaning the bet is set and your chips will not be coming back unless you make a win.
           </p>
@@ -120,84 +120,80 @@ export function LandingPage(props) {
           </p>
         </div>
         <div className="handNames">
-          <div className="royalflushL">
+          <div className="demoHandL">
             <img className="exampleCardH royalflushL" alt="random card" src={tenOfSpades}/>
             <img className="exampleCardH royalflushL" alt="random card" src={jackOfSpades}/>
             <img className="exampleCardH royalflushL" alt="random card" src={queenOfSpades}/>
             <img className="exampleCardH royalflushL" alt="random card" src={kingOfSpades}/>
             <img className="exampleCardH royalflushL" alt="random card" src={aceOfSpades}/>
           </div>
-          <div className=" straightflushL">
+            <p className="DemoDesc">Royalflush: 10, J, Q, K, and A all of the same suit <span className="winning">x500</span></p>
+          <div className="demoHandL">
             <img className="exampleCardH straightflushL" alt="random card" src={sixOfClubs}/>
             <img className="exampleCardH straightflushL" alt="random card" src={sevenOfClubs}/>
             <img className="exampleCardH straightflushL" alt="random card" src={eightOfClubs}/>
             <img className="exampleCardH straightflushL" alt="random card" src={nineOfClubs}/>
             <img className="exampleCardH straightflushL" alt="random card" src={tenOfClubs}/>
           </div>
-          <div className=" fourofakindL">
+            <p className="DemoDesc">Straight Flush: Rank in order and same suit <span className="winning">x50</span></p>
+          <div className="demoHandL">
             <img className="exampleCardH fourofakindL" alt="random card" src={kingOfSpades}/>
             <img className="exampleCardH fourofakindL" alt="random card" src={kingOfHearts}/>
             <img className="exampleCardH fourofakindL" alt="random card" src={kingOfClubs}/>
             <img className="exampleCardH fourofakindL" alt="random card" src={kingOfDiamonds}/>
             <img className="exampleCardH fourofakindL" alt="random card" src={fiveOfSpades}/>
           </div>
-          <div className=" fullhouseL">
+            <p className="DemoDesc">Full House: Three cards of the same rank, then a pair <span className="winning">x20</span></p>
+          <div className="demoHandL">
             <img className="exampleCardH fullhouseL" alt="random card" src={aceOfDiamonds}/>
             <img className="exampleCardH fullhouseL" alt="random card" src={aceOfHearts}/>
             <img className="exampleCardH fullhouseL" alt="random card" src={aceOfClubs}/>
             <img className="exampleCardH fullhouseL" alt="random card" src={tenOfHearts}/>
             <img className="exampleCardH fullhouseL" alt="random card" src={tenOfDiamonds}/>
           </div>
-          <div className=" flushL">
+            <p className="DemoDesc">Full House: Three cards of the same rank, then a pair <span className="winning">x10</span></p>
+          <div className="demoHandL">
             <img className="exampleCardH flushL" alt="random card" src={twoOfDiamonds}/>
             <img className="exampleCardH flushL" alt="random card" src={kingOfDiamonds}/>
             <img className="exampleCardH flushL" alt="random card" src={eightOfDiamonds}/>
             <img className="exampleCardH flushL" alt="random card" src={aceOfDiamonds}/>
             <img className="exampleCardH flushL" alt="random card" src={fiveOfDiamonds}/>
           </div>
+            <p className="DemoDesc">Flush: All cards are the same suit <span className="winning">x4</span></p>
         </div>
         <div className="handNamesTwo">
-          <div className="straightL">
+        <div className="demoHandL">
             <img className="exampleCardH straightL" alt="random card" src={threeOfDiamonds}/>
             <img className="exampleCardH straightL" alt="random card" src={fourOfSpades}/>
             <img className="exampleCardH straightL" alt="random card" src={fiveOfDiamonds}/>
             <img className="exampleCardH straightL" alt="random card" src={sixOfHearts}/>
             <img className="exampleCardH straightL" alt="random card" src={sevenOfClubs}/>
           </div>
-          <div className="threeofakindL">
+            <p className="DemoDesc">Straight: Card ranks in order <span className="winning">x3</span></p>
+          <div className="demoHandL">
             <img className="exampleCardH threeofakindL" alt="random card" src={aceOfClubs}/>
             <img className="exampleCardH threeofakindL" alt="random card" src={aceOfDiamonds}/>
             <img className="exampleCardH threeofakindL" alt="random card" src={aceOfSpades}/>
             <img className="exampleCardH threeofakindL" alt="random card" src={fiveOfHearts}/>
             <img className="exampleCardH threeofakindL" alt="random card" src={kingOfClubs}/>
           </div>
-          <div className="twopairL">
+            <p className="DemoDesc">Three of a kind: Three cards of the same rank <span className="winning">x2</span></p>
+          <div className="demoHandL">
             <img className="exampleCardH twopairL" alt="random card" src={twoOfDiamonds}/>
             <img className="exampleCardH twopairL" alt="random card" src={twoOfHearts}/>
             <img className="exampleCardH twopairL" alt="random card" src={fiveOfSpades}/>
             <img className="exampleCardH twopairL" alt="random card" src={fiveOfDiamonds}/>
             <img className="exampleCardH twopairL" alt="random card" src={jackOfDiamonds}/>
           </div>
-          <div className="pairL">
+            <p className="DemoDesc">Two Pair: Two pairs of the same rank <span className="winning">x1</span></p>
+          <div className="demoHandL">
             <img className="exampleCardH pairL" alt="random card" src={twoOfDiamonds}/>
             <img className="exampleCardH pairL" alt="random card" src={aceOfDiamonds}/>
             <img className="exampleCardH pairL" alt="random card" src={eightOfHearts}/>
             <img className="exampleCardH pairL" alt="random card" src={aceOfClubs}/>
             <img className="exampleCardH pairL" alt="random card" src={fiveOfSpades}/>
           </div>
-        </div>
-        <div className="handDesc">
-          <p className="royalflushdesc">Royalflush: 10, J, Q, K, and A all of the same suit <span className="winning">x500</span></p>
-          <p className="straightflushdesc">Straight Flush: Rank in order and same suit <span className="winning">x50</span></p>
-          <p className="fourofakinddesc">Four of a kind: Four cards of the same rank <span className="winning">x20</span></p>
-          <p className="fullhousedesc">Full House: Three cards of the same rank, then a pair <span className="winning">x10</span></p>
-          <p className="flushdesc">Flush: All cards are the same suit <span className="winning">x4</span></p>
-        </div>
-        <div className="handDescTwo">
-          <p className="straightdesc">Straight: Card ranks in order <span className="winning">x3</span></p>
-          <p className="threeofakinddesc">Three of a kind: Three cards of the same rank <span className="winning">x2</span></p>
-          <p className="twopairdesc">Two Pair: Two pairs of the same rank <span className="winning">x1</span></p>
-          <p className="pairdesc">Pair: Two cards of the same rank <span className="winning">x0.5</span></p>
+            <p className="DemoDesc">Pair: Two cards of the same rank <span className="winning">x0.5</span></p>
         </div>
       </div>
     </div>

@@ -20,7 +20,7 @@ function dealButton(props) {
   if(!props.dealButton && !props.standby) {
     return(
       <div>
-        <button className="button" onClick={() => { //onclick DEAL
+        <button className="button deal-btn" onClick={() => { //onclick DEAL
           if(props.chips === 0 || props.chips - props.stake < 0) {
             return alert('You can\' afford it, bet an smaller amount');
           } else if (props.stake === 0) {
@@ -46,7 +46,7 @@ function dealButton(props) {
   else if (props.dealButton && !props.standby){
     return(
       <div>
-        <div>
+        <div className='holdBtn-row'>
           {
             props.currentHand.map((card, index) => {
               if(!card.held) {
@@ -57,7 +57,7 @@ function dealButton(props) {
             })
           }
         </div>
-        <div>
+        <div className="redeal-btn-align">
           <button className="button redeal" onClick={() => { //Onclick REDEAL
             props.dispatch(firstHand());
             props.dispatch(dealPressed());

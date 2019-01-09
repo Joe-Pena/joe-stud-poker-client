@@ -7,8 +7,10 @@ export function StatSection(props) {
   return(
     <div className="statContainer">
       <h2 className="sUsername">{props.username}</h2>
-      <h3 className="sStatHands">Hands: </h3>
-        <ul>
+      {/* <div className="hand-statistics"> */}
+        {/* <h3 className="sStatHands">Hands: </h3> */}
+        <ul className="sStatHands">
+          <h3>Hands: </h3>
           <li className="sSingleHand sRoyalflush">Royal Flush: {props.hands.royalFlush}</li>
           <li className="sSingleHand sFiveofakind">Five of a Kind: {props.hands.fiveOfAKind}</li>
           <li className="sSingleHand sStraightflush">Straight Flush: {props.hands.straightFlush}</li>
@@ -21,6 +23,7 @@ export function StatSection(props) {
           <li className="sSingleHand sPair">Pair: {props.hands.pair}</li>
           <li className="sSingleHand sTotalhands">Total Hands: {props.hands.totalHands}</li>
         </ul>
+      {/* </div> */}
       <h3 className="sStatWins">Highest Win: {props.hiWin}</h3>
       <h3 className="sStatStake">Highest Stake: {props.hiStake}</h3>
       <button className="sLogOutButton" onClick={() => props.dispatch(logout())}>logout</button>
