@@ -16,7 +16,7 @@ https://stud-poker-client.herokuapp.com/
 If you're unfamiliar with how poker works, simply have a look at the landing page's instructions.
 
 # Instructions
-<img src="https://github.com/thinkful-ei24/joe-stud-poker-client/blob/master/src/images/studpokerlanding.png" width="500">
+<img src="https://github.com/thinkful-ei24/joe-stud-poker-client/blob/master/src/images/studpokerlanding.png" width="100%">
 In this game the dealer gives you 5 poker cards to make a hand.
 You can then choose to keep all your cards, or select cards to switch to try to make a new hand.
 
