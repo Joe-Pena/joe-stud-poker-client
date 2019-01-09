@@ -49,15 +49,19 @@ li {
   align-self: center;
   justify-self: center;
   font-size: 1.2em;
-  color: rgb(39, 39, 39);
+  color: rgb(40, 40, 40);
   cursor: pointer;
-  width: 80px;
-  height: 25px;
+  width: auto;
+  height: auto;
   font-weight: 600;
-  background-color: gold;
-  border: none;
-  border-radius: 5px;
+  background-color: transparent;
+  border: 3px solid rgb(40, 40, 40);
   padding: 2px;
+}
+
+.sLogOutButton:hover {
+  color: red;
+  border-color: red;
 }
 
 .sChipRefillButton {
@@ -66,13 +70,17 @@ li {
   align-self: center;
   justify-self: center;
   font-size: 1.2em;
-  color: rgb(39, 39, 39);
+  color: rgb(40, 40, 40);
   cursor: pointer;
-  width: 150px;
-  height: 25px;
+  width: auto;
+  height: auto;
   font-weight: 600;
-  background-color: gold;
-  border: none;
-  border-radius: 5px;
+  background-color: transparent;
+  border: 3px solid rgb(40, 40, 40);
   padding: 2px;
+}
+
+.sChipRefillButton:hover {
+  color: red;
+  border-color: red;
 }

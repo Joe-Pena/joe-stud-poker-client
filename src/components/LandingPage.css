@@ -158,14 +158,6 @@
   justify-self: center;
 }
 
-.stakebtn {
-  color: rgb(39, 39, 39);
-  background-color: gold;
-  border: none;
-  border-radius: 5px;
-  padding: 2px;
-}
-
 .handValues {
   font-size: 1vw;
   grid-area: hand-values;
