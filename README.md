@@ -1,6 +1,6 @@
 # StudPoker
 
-<img src="https://github.com/thinkful-ei24/joe-stud-poker-client/blob/master/src/images/studPokerFull.png" width="500">
+<img src="https://github.com/thinkful-ei24/joe-stud-poker-client/blob/master/src/images/studPokerFull.svg" width="500">
 
 Stud Poker is a single hand poker game.
 
