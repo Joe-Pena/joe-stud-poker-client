@@ -7,7 +7,7 @@ import DealButton from './DealButton';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import StakeButton from './StakeButton';
-import logo from '../images/studPokerFull.png';
+import logo from '../images/studPokerFull.svg';
 import WelcomePage from './WelcomePage';
 import './PokerTable.css';
 import StatSection from './StatSection';
@@ -37,8 +37,6 @@ export function PokerTable(props) {
       </div>
       <div className="middleSection">
         <Hand />
-      </div>
-      <div className="seperator">
       </div>
       <div className="lowerSection">
         <ChipCounter className="counter"/>

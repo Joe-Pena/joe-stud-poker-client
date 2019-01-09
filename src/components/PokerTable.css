@@ -3,7 +3,8 @@ html {
 }
 
 body {
-  background-color: rgb(23, 73, 23);
+  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
 }
 
 .parentView {
@@ -13,49 +14,59 @@ body {
 .logo {
   display: block;
   max-width: 150px;
+  transform: translateY(-5px);
   margin: auto;
 }
 
-.seperator {
-background: rgb(100, 15, 0);
-min-height: 15px;
-width: 100%;
-}
-
 .topSection, .middleSection, .lowerSection {
-  flex:1;
-  width: 100%;
+  /* flex:1; */
+  /* width: 100%; */
   height: 33%;
 }
 
 .lowerSection {
   display: grid;
-  background: rgb(34, 34, 34);
-  border-radius: 0 0 5px 5px;
+  background: transparent;
+  border: 5px solid black;
+  padding: 1.5em;
+  margin: auto;
   grid-template-columns: 1fr 2fr 1fr;
-  min-height: 300px;
   grid-template-rows: 10% 1fr;
+  grid-template-areas: 
+    "counter deal stake"
+    "stats stats stats";
+  width: 90%;
+  min-height: 300px;
   justify-items: center;
 }
 
 .counter {
-  grid-column-start: 1;
-  grid-row-start: 1;
+  grid-area: counter;
 }
 
 .deal {
-  grid-column-start: 2;
-  grid-row-start: 1;
+  grid-area: deal;
   margin: 0px 20px 0 20px;
 }
 
 .stake {
-  grid-column-start: 3;
-  grid-row-start: 1;
+  grid-area: stake;
 }
 
-.controllerLine {
-  background-color:  rgb(100, 15, 0);
-  min-height: 3px;
-  grid-row-start: 2;
+@media only screen and (max-width: 724px) {
+  html {
+    height: 100%;
+    width: 100%;
+  }
+
+  .lowerSection {
+    width: auto;
+    grid-template-rows: 10% 15% 5% 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "counter"
+      "deal"
+      "stake"
+      "stats";
+  }
 }

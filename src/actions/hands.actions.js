@@ -185,7 +185,6 @@ export const saveAuthToken = jwtToken => dispatch => {
 };
 
 export const loadAuthToken = () => dispatch => {
-  console.log('getting da token');
   try {
   return localStorage.getItem('authToken');
   } catch(err) {}
@@ -214,7 +213,6 @@ export const refreshUser = (user)=> dispatch => {
 
 export const userUpdateDB = (user)=> (dispatch, getState) => {
   const id = getState().cards.userId;
-  console.log('id for update', id);
   const updateInfo = {
     username: user.username,
     email: user.email,
@@ -261,7 +259,6 @@ export const logIn = (values) => dispatch => {
 }
 
 export const signUp = (values) => dispatch => {
-  console.log(values);
   return fetch('https://stud-poker-server.herokuapp.com/api/users', {
     method: 'POST',
     body: JSON.stringify(values),
@@ -286,7 +283,6 @@ export const signUp = (values) => dispatch => {
 
 export const refreshToken = () => (dispatch, getState) => {
   const authToken = getState().cards.jwtToken;
-  console.log('user after restet', getState().cards.userId);
   return fetch(`https://stud-poker-server.herokuapp.com/api/auth/refresh`, {
       method: 'POST',
       headers: {
@@ -298,7 +294,6 @@ export const refreshToken = () => (dispatch, getState) => {
         return response.json();
       })
       .then(data => {
-        console.log('refreshed data', data.user);
         dispatch(jwtToken(data.jwtToken));
         dispatch(userState(data.user));
       })
