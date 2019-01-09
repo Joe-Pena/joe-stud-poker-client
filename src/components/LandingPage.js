@@ -110,7 +110,7 @@ export function LandingPage(props) {
         </div>
         <div className="handValues">
           <p className="handExplain">In order to set a stake(a bet) you must enter the amount you will be putting on 
-          the <input className="stakebtn" type="number" step="5" placeholder="Stake" disabled></input> box,
+          the <input className="stakebtnL" placeholder="Stake" disabled></input> box,
             note that once you press the <button className="dealbtnL" disabled>Deal</button> button, your stake
             will be "on the table", meaning the bet is set and your chips will not be coming back unless you make a win.
           </p>

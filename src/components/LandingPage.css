@@ -10,7 +10,11 @@
   grid-area: landing;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 25% 60% 15%;
+  grid-template-rows: 20% 40% 1fr;
+  grid-template-areas: 
+    ". logo ."
+    ". message ."
+    ". startbtn .";
   color: black;
 }
 
@@ -39,6 +43,7 @@
 }
 
 .logoL {
+  grid-area: logo;
   display: flex;
   width: 75%;
   justify-self: center;
@@ -46,17 +51,14 @@
 }
 
 .messageL {
+  grid-area: message;
   color: black;
-  grid-column-start: 2;
-  /* grid-column-end: 4; */
-  grid-row-start: 2;
   justify-content: center;
   text-align: center;
 }
 
 .loginBtnL {
-  grid-column-start: 2;
-  grid-row-start: 3;
+  grid-area: startbtn;
   background-color: transparent;
   color: rgb(40, 40, 40);
   font-weight: bold;
@@ -73,19 +75,29 @@
 }
 
 .dealbtnL {
-  background-color: gold;
-  color: rgb(43, 43, 43);
+  background-color: transparent;
+  color: white;
   font-weight: bold;
-  border: none;
-  border-radius: 5px;
+  border: 1.5px solid white;
+  width: auto;
+  height: auto;
 }
 
 .holdBtnL {
-  color: gold;
-  background-color: rgb(39, 39, 39);
+  color: rgb(40, 40, 40);
+  background-color: white;
   border: none;
-  border-radius: 5px;
   margin-bottom: 10px;
+}
+
+.stakebtnL {
+  background-color: transparent;
+  border: 1.5px solid white;
+  color: white;
+}
+
+.stakebtnL::placeholder {
+  color: white;
 }
 
 .instructions {
@@ -196,3 +208,64 @@
   max-height: 60px;
 }
 
+@media only screen and (max-width: 724px) {
+
+  .parentViewL {
+    grid-template-rows: 90vh 1fr;
+  }
+
+  .topViewL {
+    display: grid;
+    /* grid-template-rows: 20% 1fr 1fr;
+    grid-template-columns: 1fr; */
+    grid-template-areas: 
+      "logo logo logo"
+      "message message message"
+      "startbtn startbtn startbtn";
+    justify-content: center;
+  }
+
+  .logoL {
+    width: 100%;
+  }
+
+  .messageL {
+    font-size: 2.5vh;
+  }
+
+  .exampleCard {
+    height: 60px;
+    width: 40px;
+  }
+
+
+  .bottomViewL {
+    grid-template-rows: 2% 0.4fr 0.5fr 0.3fr 1fr 0.6fr 0.4fr 0.6fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "title"
+      "objective"
+      "random-hand"
+      "objective-two"
+      "hold-explain"
+      "hand-with-btns"
+      "hold-explain-two"
+      "hand-values"
+      "hand-demos"
+      "hand-demos-cont";
+    font-size: 2vh;
+  }
+
+  .instructionsObj {
+    font-size: 2vh;
+  }
+
+  .objectiveFour, .insRandFour, .instructionsRedeal,
+  .handExplain, .handExplainTwo {
+    font-size: 2vh;
+  }
+
+  .DemoDesc {
+    font-size: 1vh;
+  }
+}
