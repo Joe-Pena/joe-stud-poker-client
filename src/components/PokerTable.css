@@ -28,33 +28,45 @@ body {
   display: grid;
   background: transparent;
   border: 5px solid black;
-  padding: 2em;
+  padding: 1.5em;
   margin: auto;
   grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 10% 1fr;
+  grid-template-areas: 
+    "counter deal stake"
+    "stats stats stats";
   width: 90%;
   min-height: 300px;
-  grid-template-rows: 10% 1fr;
   justify-items: center;
 }
 
 .counter {
-  grid-column-start: 1;
-  grid-row-start: 1;
+  grid-area: counter;
 }
 
 .deal {
-  grid-column-start: 2;
-  grid-row-start: 1;
+  grid-area: deal;
   margin: 0px 20px 0 20px;
 }
 
 .stake {
-  grid-column-start: 3;
-  grid-row-start: 1;
+  grid-area: stake;
 }
 
-.controllerLine {
-  background-color:  rgb(100, 15, 0);
-  min-height: 3px;
-  grid-row-start: 2;
+@media only screen and (max-width: 724px) {
+  html {
+    height: 100%;
+    width: 100%;
+  }
+
+  .lowerSection {
+    width: auto;
+    grid-template-rows: 10% 15% 5% 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "counter"
+      "deal"
+      "stake"
+      "stats";
+  }
 }

@@ -21,59 +21,11 @@
   flex-direction: column;
 }
 
- @media only screen and (max-width: 600px) {
-  .board {
-    display: grid;
-    grid-auto-rows: minmax(10px, 30px);
-    width: auto;
-    align-items: center;
-    padding: 10px;
-    height: auto;
-    border-radius: 5px;
-    background-color: rgb(41, 41, 41);
-    margin: auto;
-    color: white;
-  }
-
-  .royalFlush {
-    grid-row-start: 1;
-  }
-  
-  .fiveOfAKind {
-    grid-row-start: 2;
-  }
-  
-  .straightFlush {
-    grid-row-start: 3;
-  }
-  
-  .fourOfAKind {
-    grid-row-start: 4;
-  }
-  
-  .fullHouse {
-    grid-row-start: 5;
-  }
-  
-  .flush {
-    grid-row-start: 6;
-  }
-  
-  .straight {
-    grid-row-start: 7;
-  }
-  
-  .threeOfAKind {
-    grid-row-start: 8;
-  }
-  
-  .twoPair {
-    grid-row-start: 9;
-  }
-  
-  .pair {
-    grid-row-start: 10;
-  }
+ @media only screen and (max-width: 724px) {
+   .board {
+     width: auto;
+     justify-content: space-evenly;
+   }
  }
 
 /* @media only screen and (max-width: 600px) {

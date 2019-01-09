@@ -125,36 +125,50 @@
   margin: auto;
 }
 
-/* a {
-  display: flex;
-  color: rgb(0, 204, 255);
-  justify-content: flex-end;
-}
+@media only screen and (max-width: 724px) {
 
+  .loginsignupContainer {
+    grid-template-rows: 50% 1fr;
+  }
 
-.button {
-  display: flex;
-  justify-content: flex-end;
-  margin: auto;
-  background-color: gold;
-  border-radius: 5px;
-  font-weight: 400;
-  color: rgb(40, 40, 40);
-  font-weight: bold;
-}
+  .loginForm {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 5% 1fr 5%;
+    grid-template-areas:
+      ". message ."
+      ". form ."
+      ". login ."
+      ". link .";
+    width: 70%;
+  }
 
-.button:hover {
-  cursor: pointer;
+  .signUpForm {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 5% 1fr 5%;
+    grid-template-areas:
+      ". message ."
+      ". form ."
+      ". login ."
+      ". link .";
+    width: 70%;
+  }
+
+  .formField {
+    width: auto;
+  }
+
+  .signupLink {
+    grid-row-start: 5;
+    grid-column-start: 2;
+  }
+
+  .LloginBtn {
+    width: auto;
+    height: 30%;
+  }
+
+  .loginLink {
+    grid-row-start: 6;
+    grid-column-start: 2;
+  }
 }
-.formField {
-  background-color: rgb(24, 24, 24);
-  color: white;
-  width: 60%;
-  height: 20px;
-  display: block;
-  margin: auto;
-  margin-bottom: 10px;
-  border: none;
-  padding: 3px;
-  border-radius: 5px;
-} */
